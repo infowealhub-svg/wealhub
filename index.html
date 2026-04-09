@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wealhub – Quality Tech at Kenyan Prices</title>
   <meta name="description" content="Wealhub – Your trusted Nairobi marketplace for genuine laptops, cables, accessories and electronics. M-Pesa accepted. Fast delivery across Kenya.">
+  <!-- Google Search Console Verification – replace content value with your actual token -->
+  <!-- <meta name="google-site-verification" content="PASTE_YOUR_TOKEN_HERE" /> -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -298,11 +300,19 @@
       justify-content: center;
       background: var(--bg-gray);
       position: relative;
-      padding: 20px;
+      padding: 0;
+      overflow: hidden;
       transition: background 0.2s;
     }
     .pcard:hover .pcard-img { background: var(--green-light); }
     .pcard-img svg { max-width: 110px; max-height: 110px; }
+    .pcard-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .pcard:hover .pcard-img img { transform: scale(1.04); }
     .pbadge {
       position: absolute;
       top: 12px;
@@ -568,13 +578,10 @@
     <div class="hero-ring ring1"></div>
     <div class="hero-ring ring2"></div>
     <div class="hero-card">
-      <div class="hero-card-icon">
-        <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-          <rect x="6" y="10" width="40" height="28" rx="4" fill="#1D9E75" opacity="0.2" stroke="#1D9E75" stroke-width="2"/>
-          <rect x="2" y="40" width="48" height="5" rx="2.5" fill="#1D9E75" opacity="0.3"/>
-          <rect x="12" y="17" width="28" height="16" rx="2" fill="#1D9E75" opacity="0.35"/>
-          <circle cx="26" cy="25" r="6" fill="#1D9E75" opacity="0.6"/>
-        </svg>
+      <div class="hero-card-icon" style="overflow:hidden;border-radius:50%">
+        <img id="hero-img" data-handle="dell-latitude-5300-core-i5-8th-gen-8gb-ram-256gb-ssd-13-3"
+          alt="Dell Latitude 5300"
+          style="width:88px;height:88px;object-fit:cover;border-radius:50%" />
       </div>
       <h3>Dell Latitude 5300</h3>
       <div class="price">KSh 25,000</div>
@@ -655,13 +662,9 @@
     <!-- Dell Latitude 5300 -->
     <a href="https://wealhub.co.ke/products/dell-latitude-5300-core-i5-8th-gen-8gb-ram-256gb-ssd-13-3">
       <div class="pcard">
-        <div class="pcard-img" style="background:#E9F5F1">
+        <div class="pcard-img">
           <span class="pbadge badge-stock">In Stock</span>
-          <svg viewBox="0 0 110 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8" y="8" width="94" height="58" rx="5" fill="#1D9E75" opacity="0.12" stroke="#1D9E75" stroke-width="1.5"/>
-            <rect x="4" y="68" width="102" height="8" rx="4" fill="#1D9E75" opacity="0.15"/>
-            <rect x="16" y="16" width="78" height="42" rx="3" fill="#1D9E75" opacity="0.18"/>
-          </svg>
+          <img data-handle="dell-latitude-5300-core-i5-8th-gen-8gb-ram-256gb-ssd-13-3" alt="Dell Latitude 5300" />
         </div>
         <div class="pcard-body">
           <div class="pcard-brand">Dell</div>
@@ -677,14 +680,9 @@
     <!-- MacBook Air -->
     <a href="https://wealhub.co.ke/products/apple-macbook-air-a1466-13-3-core-i5-8gb-ram-256gb-ssd-2015">
       <div class="pcard">
-        <div class="pcard-img" style="background:#F0F0EE">
+        <div class="pcard-img">
           <span class="pbadge badge-stock">In Stock</span>
-          <svg viewBox="0 0 110 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="6" width="90" height="60" rx="6" fill="#555" opacity="0.1" stroke="#555" stroke-width="1.5"/>
-            <rect x="4" y="68" width="102" height="8" rx="4" fill="#555" opacity="0.12"/>
-            <circle cx="55" cy="72" r="3" fill="#555" opacity="0.2"/>
-            <rect x="18" y="14" width="74" height="44" rx="3" fill="#888" opacity="0.12"/>
-          </svg>
+          <img data-handle="apple-macbook-air-a1466-13-3-core-i5-8gb-ram-256gb-ssd-2015" alt="MacBook Air" />
         </div>
         <div class="pcard-body">
           <div class="pcard-brand">Apple</div>
@@ -700,13 +698,9 @@
     <!-- Dell Latitude 7280 (Sold Out) -->
     <a href="https://wealhub.co.ke/products/dell-latitude-7280-intel-core-i5-8gb-256gb">
       <div class="pcard">
-        <div class="pcard-img" style="background:#F4F4F2">
+        <div class="pcard-img">
           <span class="pbadge badge-sold">Sold Out</span>
-          <svg viewBox="0 0 110 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8" y="8" width="94" height="58" rx="5" fill="#888" opacity="0.1" stroke="#888" stroke-width="1.5"/>
-            <rect x="4" y="68" width="102" height="8" rx="4" fill="#888" opacity="0.1"/>
-            <rect x="16" y="16" width="78" height="42" rx="3" fill="#888" opacity="0.1"/>
-          </svg>
+          <img data-handle="dell-latitude-7280-intel-core-i5-8gb-256gb" alt="Dell Latitude 7280" />
         </div>
         <div class="pcard-body">
           <div class="pcard-brand">Dell</div>
@@ -724,13 +718,7 @@
       <div class="pcard">
         <div class="pcard-img">
           <span class="pbadge badge-stock">In Stock</span>
-          <svg viewBox="0 0 90 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="32" width="32" height="18" rx="4" fill="#1D9E75" opacity="0.18" stroke="#1D9E75" stroke-width="1.5"/>
-            <line x1="42" y1="41" x2="72" y2="41" stroke="#1D9E75" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="76" cy="41" r="5" fill="#1D9E75" opacity="0.35"/>
-            <line x1="22" y1="25" x2="22" y2="16" stroke="#1D9E75" stroke-width="2" stroke-linecap="round"/>
-            <line x1="30" y1="25" x2="30" y2="16" stroke="#1D9E75" stroke-width="2" stroke-linecap="round"/>
-          </svg>
+          <img data-handle="dell-laptop-charger-19v-4-62a-power-adapter" alt="Dell Laptop Charger" />
         </div>
         <div class="pcard-body">
           <div class="pcard-brand">Dell</div>
@@ -746,18 +734,9 @@
     <!-- Solar Streetlight -->
     <a href="https://wealhub.co.ke/products/cclamp-200w-solar-streetlights-38-000-lumens-led-outdoor-lighting">
       <div class="pcard">
-        <div class="pcard-img" style="background:#FFFBF0">
+        <div class="pcard-img">
           <span class="pbadge badge-stock">In Stock</span>
-          <svg viewBox="0 0 90 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="45" cy="34" r="16" fill="#EF9F27" opacity="0.18" stroke="#EF9F27" stroke-width="1.5"/>
-            <circle cx="45" cy="34" r="8" fill="#EF9F27" opacity="0.4"/>
-            <line x1="45" y1="12" x2="45" y2="5" stroke="#EF9F27" stroke-width="2" stroke-linecap="round"/>
-            <line x1="65" y1="34" x2="72" y2="34" stroke="#EF9F27" stroke-width="2" stroke-linecap="round"/>
-            <line x1="25" y1="34" x2="18" y2="34" stroke="#EF9F27" stroke-width="2" stroke-linecap="round"/>
-            <line x1="59" y1="20" x2="63" y2="16" stroke="#EF9F27" stroke-width="2" stroke-linecap="round"/>
-            <line x1="31" y1="20" x2="27" y2="16" stroke="#EF9F27" stroke-width="2" stroke-linecap="round"/>
-            <rect x="40" y="51" width="10" height="18" rx="3" fill="#EF9F27" opacity="0.25"/>
-          </svg>
+          <img data-handle="cclamp-200w-solar-streetlights-38-000-lumens-led-outdoor-lighting" alt="200W Solar Streetlights" />
         </div>
         <div class="pcard-body">
           <div class="pcard-brand">CcLamp</div>
@@ -773,14 +752,9 @@
     <!-- Bluetooth Dongle -->
     <a href="https://wealhub.co.ke/products/bluetooth-usb-dongle-adapter-csr-4-0-for-desktop-and-laptop">
       <div class="pcard">
-        <div class="pcard-img" style="background:#EEF4FD">
+        <div class="pcard-img">
           <span class="pbadge badge-stock">In Stock</span>
-          <svg viewBox="0 0 90 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="34" y="14" width="22" height="36" rx="5" fill="#378ADD" opacity="0.18" stroke="#378ADD" stroke-width="1.5"/>
-            <path d="M45 20 L57 28 L45 36 L45 20Z" fill="#378ADD" opacity="0.45"/>
-            <path d="M45 36 L57 44 L45 52" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-            <rect x="40" y="50" width="10" height="12" rx="3" fill="#378ADD" opacity="0.25"/>
-          </svg>
+          <img data-handle="bluetooth-usb-dongle-adapter-csr-4-0-for-desktop-and-laptop" alt="Bluetooth USB Dongle" />
         </div>
         <div class="pcard-body">
           <div class="pcard-brand">CSR</div>
@@ -904,6 +878,28 @@
   </a>
   <button class="banner-close" onclick="document.getElementById('store-banner').style.display='none'" title="Close">×</button>
 </div>
+
+<script>
+// Auto-load product images from Shopify store
+(async function() {
+  const imgs = document.querySelectorAll('img[data-handle]');
+  const handles = [...new Set([...imgs].map(i => i.dataset.handle))];
+
+  for (const handle of handles) {
+    try {
+      const res = await fetch(`https://wealhub.co.ke/products/${handle}.js`);
+      if (!res.ok) continue;
+      const product = await res.json();
+      const imgUrl = product.featured_image || (product.images && product.images[0]);
+      if (!imgUrl) continue;
+      document.querySelectorAll(`img[data-handle="${handle}"]`).forEach(el => {
+        el.src = imgUrl;
+        el.onerror = () => { el.style.display = 'none'; };
+      });
+    } catch(e) {}
+  }
+})();
+</script>
 
 </body>
 </html>
