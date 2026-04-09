@@ -1,1 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wealhub – Quality Tech at Kenyan Prices</title>
+  <meta name="description" content="Wealhub – Your trusted Nairobi marketplace for genuine laptops, cables, accessories and electronics. M-Pesa accepted. Fast delivery across Kenya.">
+  <!-- Google Search Console Verification – replace content value with your actual token -->
+  <!-- <meta name="google-site-verification" content="PASTE_YOUR_TOKEN_HERE" /> -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+    :root {
+      --green: #1D9E75;
+      --green-dark: #0F6E56;
+      --green-darker: #085041;
+      --green-light: #E1F5EE;
+      --green-mid: #D1F0E4;
+      --text: #1a1a1a;
+      --text-muted: #555;
+      --text-faint: #888;
+      --border: rgba(0,0,0,0.1);
+      --border-soft: rgba(0,0,0,0.06);
+      --bg: #ffffff;
+      --bg-soft: #F8FAF9;
+      --bg-gray: #F4F4F2;
+      --radius: 10px;
+      --radius-lg: 16px;
+    }
+
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--bg); }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; font-family: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* TOPBAR */
+    .topbar {
+      background: var(--green-darker);
+      color: rgba(255,255,255,0.88);
+      font-size: 12.5px;
+      padding: 9px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .topbar strong { color: #9FE1CB; }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 40px;
+      border-bottom: 1px solid var(--border-soft);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { font-size: 26px; font-weight: 800; letter-spacing: -1px; color: var(--text); }
+    .logo em { color: var(--green); font-style: normal; }
+    .search-wrap {
+      flex: 1;
+      max-width: 380px;
+      margin: 0 28px;
+      display: flex;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      overflow: hidden;
+    }
+    .search-wrap input {
+      border: none;
+      outline: none;
+      padding: 10px 16px;
+      font-size: 13.5px;
+      width: 100%;
+      font-family: inherit;
+      background: #fafafa;
+      color: var(--text);
+    }
+    .search-wrap button {
+      background: var(--green);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .search-wrap button:hover { background: var(--green-dark); }
+    .nav-actions { display: flex; gap: 10px; align-items: center; }
+    .btn-wa {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: #25D366;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .btn-wa:hover { background: #1ebe5b; }
+    .btn-cart {
+      background: var(--green);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .btn-cart:hover { background: var(--green-dark); }
+
+    /* CATEGORY BAR */
+    .catbar {
+      display: flex;
+      gap: 32px;
+      padding: 11px 40px;
+      background: var(--bg-soft);
+      border-bottom: 1px solid var(--border-soft);
+      font-size: 13.5px;
+      overflow-x: auto;
+    }
+    .catbar a { color: var(--text-muted); white-space: nowrap; font-weight: 500; }
+    .catbar a:hover { color: var(--green); }
+    .catbar a.hot { color: #D85A30; font-weight: 700; }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      min-height: 420px;
+    }
+    .hero-left {
+      padding: 60px 48px;
+      background: var(--bg-soft);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-pill {
+      display: inline-block;
+      background: var(--green-mid);
+      color: var(--green-darker);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+    .hero-left h1 {
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+    .hero-left h1 span { color: var(--green); }
+    .hero-left p {
+      font-size: 15.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 380px;
+      margin-bottom: 32px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .stat-num { font-size: 20px; font-weight: 800; color: var(--green-darker); }
+    .stat-label { font-size: 11.5px; color: var(--text-faint); margin-top: 2px; }
+    .hero-btns { display: flex; gap: 12px; }
+    .btn-primary {
+      background: var(--green);
+      color: white;
+      border: none;
+      padding: 13px 28px;
+      border-radius: 9px;
+      font-size: 14.5px;
+      font-weight: 700;
+    }
+    .btn-primary:hover { background: var(--green-dark); }
+    .btn-outline {
+      background: none;
+      color: var(--green-dark);
+      border: 2px solid var(--green);
+      padding: 13px 28px;
+      border-radius: 9px;
+      font-size: 14.5px;
+      font-weight: 700;
+    }
+    .btn-outline:hover { background: var(--green-light); }
+    .hero-right {
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 40px;
+    }
+    .hero-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 36px solid rgba(255,255,255,0.07);
+    }
+    .ring1 { width: 420px; height: 420px; top: -90px; right: -110px; }
+    .ring2 { width: 260px; height: 260px; bottom: -70px; left: 10px; }
+    .hero-card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px 32px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      min-width: 210px;
+    }
+    .hero-card-icon {
+      width: 88px;
+      height: 88px;
+      background: var(--green-light);
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-card h3 { font-size: 14px; font-weight: 700; color: var(--green-darker); margin-bottom: 6px; }
+    .hero-card .price { font-size: 22px; font-weight: 800; color: var(--green); }
+    .hero-card .sub { font-size: 11.5px; color: var(--text-faint); margin-top: 3px; }
+
+    /* TRUST STRIP */
+    .trust {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 36px;
+      padding: 18px 40px;
+      background: white;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .trust-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); font-weight: 500; }
+    .trust-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; flex-shrink: 0; }
+
+    /* SECTIONS */
+    .section { padding: 52px 40px; }
+    .section-alt { background: var(--bg-soft); }
+    .sec-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 28px; }
+    .sec-head h2 { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; }
+    .sec-head .sec-sub { font-size: 13px; color: var(--text-faint); margin-top: 4px; }
+    .sec-head a { font-size: 13.5px; color: var(--green); font-weight: 600; }
+    .sec-head a:hover { color: var(--green-dark); }
+
+    /* CATEGORY TILES */
+    .cat-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+    .cat-tile {
+      background: white;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 22px 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .cat-tile:hover { border-color: var(--green); transform: translateY(-2px); }
+    .cat-tile-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+    .cat-tile h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+    .cat-tile span { font-size: 11.5px; color: var(--text-faint); }
+
+    /* PRODUCT GRID */
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .pcard {
+      background: white;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .pcard:hover { border-color: var(--green); box-shadow: 0 4px 20px rgba(29,158,117,0.1); }
+    .pcard-img {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-gray);
+      position: relative;
+      padding: 0;
+      overflow: hidden;
+      transition: background 0.2s;
+    }
+    .pcard:hover .pcard-img { background: var(--green-light); }
+    .pcard-img svg { max-width: 110px; max-height: 110px; }
+    .pcard-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .pcard:hover .pcard-img img { transform: scale(1.04); }
+    .pbadge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 5px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+    .badge-stock { background: var(--green); color: white; }
+    .badge-sold { background: #B4B2A9; color: white; }
+    .badge-new { background: #E24B4A; color: white; }
+    .pcard-body { padding: 16px; }
+    .pcard-brand { font-size: 10.5px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 4px; }
+    .pcard-name { font-size: 13.5px; font-weight: 600; line-height: 1.4; margin-bottom: 12px; }
+    .pcard-foot { display: flex; justify-content: space-between; align-items: center; }
+    .pcard-price { font-size: 17px; font-weight: 800; color: var(--green-darker); }
+    .pcard-price-gray { font-size: 17px; font-weight: 800; color: var(--text-faint); }
+    .btn-buy {
+      background: var(--green);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+    }
+    .btn-buy:hover { background: var(--green-dark); }
+    .btn-na {
+      background: var(--bg-gray);
+      color: var(--text-faint);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: default;
+    }
+
+    /* PROMO BANNER */
+    .promo {
+      margin: 0 40px 52px;
+      background: var(--green-darker);
+      border-radius: var(--radius-lg);
+      padding: 40px 52px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .promo h2 { font-size: 28px; font-weight: 800; color: white; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 8px; }
+    .promo p { font-size: 14.5px; color: rgba(255,255,255,0.7); }
+    .promo-right { text-align: right; }
+    .promo-phone { font-size: 26px; font-weight: 800; color: #9FE1CB; margin-bottom: 14px; }
+    .btn-promo-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: #25D366;
+      color: white;
+      border: none;
+      border-radius: 9px;
+      padding: 13px 24px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .btn-promo-wa:hover { background: #1ebe5b; }
+
+    /* ACCESSORIES MINI GRID */
+    .acc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .acc-card {
+      background: white;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius);
+      padding: 18px;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+    .acc-card:hover { border-color: var(--green); }
+    .acc-name { font-size: 13px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; color: var(--text); }
+    .acc-price { font-size: 15px; font-weight: 800; color: var(--green-dark); }
+
+    /* FOOTER */
+    footer {
+      background: #F2F4F2;
+      border-top: 1px solid var(--border-soft);
+      padding: 52px 40px 24px;
+    }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer-logo { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; }
+    .footer-logo em { color: var(--green); font-style: normal; }
+    .footer-desc { font-size: 13.5px; color: var(--text-muted); line-height: 1.7; margin-bottom: 18px; max-width: 240px; }
+    .footer-contact { font-size: 13.5px; color: var(--text-muted); margin-bottom: 6px; }
+    .footer-contact strong { color: var(--text); }
+    .fcol h5 { font-size: 13.5px; font-weight: 700; margin-bottom: 16px; }
+    .fcol a { display: block; font-size: 13.5px; color: var(--text-muted); margin-bottom: 10px; }
+    .fcol a:hover { color: var(--green); }
+    .footer-bottom {
+      border-top: 1px solid var(--border-soft);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12.5px;
+      color: var(--text-faint);
+    }
+    .pay-badges { display: flex; gap: 8px; }
+    .pay-badge {
+      background: white;
+      border: 1px solid var(--border-soft);
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* VISIT STORE BANNER */
+    .store-banner {
+      background: #1D9E75;
+      color: white;
+      text-align: center;
+      padding: 13px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      position: sticky;
+      bottom: 0;
+      z-index: 200;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.12);
+    }
+    .store-banner span { opacity: 0.92; font-weight: 400; }
+    .btn-visit-store {
+      background: white;
+      color: #085041;
+      border: none;
+      border-radius: 8px;
+      padding: 9px 22px;
+      font-size: 13.5px;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      letter-spacing: -0.2px;
+    }
+    .btn-visit-store:hover { background: #E1F5EE; }
+    .banner-close {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.7);
+      font-size: 20px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0 4px;
+      margin-left: 4px;
+    }
+    .banner-close:hover { color: white; }
+
+    /* VISIT STORE NAV BUTTON */
+    .btn-visit-nav {
+      background: white;
+      color: #085041;
+      border: 2px solid #1D9E75;
+      border-radius: 8px;
+      padding: 9px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-visit-nav:hover { background: #E1F5EE; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .topbar { flex-direction: column; gap: 4px; text-align: center; padding: 10px 16px; }
+      nav { padding: 14px 16px; flex-wrap: wrap; gap: 12px; }
+      .search-wrap { max-width: 100%; order: 3; flex: 1 1 100%; margin: 0; }
+      .catbar { padding: 10px 16px; gap: 20px; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { min-height: 220px; }
+      .hero-left { padding: 40px 20px; }
+      .hero-left h1 { font-size: 32px; }
+      .section { padding: 36px 20px; }
+      .cat-grid { grid-template-columns: repeat(3, 1fr); }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .acc-grid { grid-template-columns: repeat(2, 1fr); }
+      .promo { margin: 0 20px 36px; padding: 28px; flex-direction: column; gap: 20px; text-align: center; }
+      .promo-right { text-align: center; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .trust { gap: 18px; justify-content: flex-start; padding: 14px 16px; }
+    }
+    @media (max-width: 600px) {
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .product-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span>📞 Call/WhatsApp: <strong>0708 398 311</strong></span>
+  <span>✅ Genuine Products · Fast Nairobi Delivery</span>
+  <span>💳 M-Pesa · Pay on Delivery Available</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="https://wealhub.co.ke" class="logo">Weal<em>Hub</em></a>
+  <div class="search-wrap">
+    <input type="text" placeholder="Search laptops, cables, accessories..." />
+    <button onclick="window.location.href='https://wealhub.co.ke'">Search</button>
+  </div>
+  <div class="nav-actions">
+    <a href="https://wa.me/254708398311" target="_blank">
+      <button class="btn-wa">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.523 5.84L.057 23.855c-.073.283.162.54.448.493l6.163-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.37l-.359-.213-3.716.872.93-3.613-.233-.371A9.818 9.818 0 1112 21.818z"/></svg>
+        WhatsApp
+      </button>
+    </a>
+    <a href="https://wealhub.co.ke" target="_blank">
+      <button class="btn-visit-nav">🛍️ Visit Full Store</button>
+    </a>
+    <a href="https://wealhub.co.ke/cart">
+      <button class="btn-cart">🛒 Cart</button>
+    </a>
+  </div>
+</nav>
+
+<!-- CATEGORY BAR -->
+<div class="catbar">
+  <a href="https://wealhub.co.ke">All Products</a>
+  <a href="https://wealhub.co.ke">Laptops</a>
+  <a href="https://wealhub.co.ke">Accessories</a>
+  <a href="https://wealhub.co.ke">Cables & Adapters</a>
+  <a href="https://wealhub.co.ke">Solar & Lighting</a>
+  <a href="https://wealhub.co.ke">Chargers</a>
+  <a href="https://wealhub.co.ke" class="hot">🔥 Deals</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-pill">Nairobi's Trusted Tech Store</div>
+    <h1>Quality Tech at<br><span>Kenyan Prices.</span></h1>
+    <p>Laptops, accessories, cables & more — genuine products delivered across Nairobi. M-Pesa accepted, pay on delivery available.</p>
+    <div class="hero-stats">
+      <div><div class="stat-num">500+</div><div class="stat-label">Products</div></div>
+      <div><div class="stat-num">KSh 450</div><div class="stat-label">Starts from</div></div>
+      <div><div class="stat-num">Same Day</div><div class="stat-label">Nairobi Delivery</div></div>
+    </div>
+    <div class="hero-btns">
+      <a href="https://wealhub.co.ke"><button class="btn-primary">Shop Now</button></a>
+      <a href="https://wa.me/254708398311" target="_blank"><button class="btn-outline">WhatsApp Order</button></a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-ring ring1"></div>
+    <div class="hero-ring ring2"></div>
+    <div class="hero-card">
+      <div class="hero-card-icon" style="overflow:hidden;border-radius:50%">
+        <img id="hero-img" data-handle="dell-latitude-5300-core-i5-8th-gen-8gb-ram-256gb-ssd-13-3"
+          alt="Dell Latitude 5300"
+          style="width:88px;height:88px;object-fit:cover;border-radius:50%" />
+      </div>
+      <h3>Dell Latitude 5300</h3>
+      <div class="price">KSh 25,000</div>
+      <div class="sub">Core i5 · 8GB · 256GB SSD</div>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+  <div class="trust-item"><div class="trust-dot"></div>Genuine Products</div>
+  <div class="trust-item"><div class="trust-dot"></div>M-Pesa Accepted</div>
+  <div class="trust-item"><div class="trust-dot"></div>Fast Nairobi Delivery</div>
+  <div class="trust-item"><div class="trust-dot"></div>Pay on Delivery</div>
+  <div class="trust-item"><div class="trust-dot"></div>WhatsApp Support</div>
+  <div class="trust-item"><div class="trust-dot"></div>Warranty Included</div>
+</div>
+
+<!-- CATEGORIES -->
+<div class="section section-alt">
+  <div class="sec-head">
+    <div>
+      <h2>Shop by Category</h2>
+      <div class="sec-sub">Browse our full range of products</div>
+    </div>
+    <a href="https://wealhub.co.ke">View all →</a>
+  </div>
+  <div class="cat-grid">
+    <a href="https://wealhub.co.ke">
+      <div class="cat-tile">
+        <div class="cat-tile-icon" style="background:#E1F5EE">💻</div>
+        <h4>Laptops</h4>
+        <span>From KSh 25,000</span>
+      </div>
+    </a>
+    <a href="https://wealhub.co.ke">
+      <div class="cat-tile">
+        <div class="cat-tile-icon" style="background:#E6F1FB">🔌</div>
+        <h4>Cables & Adapters</h4>
+        <span>From KSh 450</span>
+      </div>
+    </a>
+    <a href="https://wealhub.co.ke">
+      <div class="cat-tile">
+        <div class="cat-tile-icon" style="background:#FAEEDA">🔋</div>
+        <h4>Chargers</h4>
+        <span>From KSh 1,500</span>
+      </div>
+    </a>
+    <a href="https://wealhub.co.ke">
+      <div class="cat-tile">
+        <div class="cat-tile-icon" style="background:#EAF3DE">☀️</div>
+        <h4>Solar & Lighting</h4>
+        <span>From KSh 2,500</span>
+      </div>
+    </a>
+    <a href="https://wealhub.co.ke">
+      <div class="cat-tile">
+        <div class="cat-tile-icon" style="background:#FBEAF0">📡</div>
+        <h4>Accessories</h4>
+        <span>From KSh 650</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- FEATURED PRODUCTS -->
+<div class="section">
+  <div class="sec-head">
+    <div>
+      <h2>Featured Products</h2>
+      <div class="sec-sub">Handpicked from our latest stock</div>
+    </div>
+    <a href="https://wealhub.co.ke">View all products →</a>
+  </div>
+  <div class="product-grid">
+
+    <!-- Dell Latitude 5300 -->
+    <a href="https://wealhub.co.ke/products/dell-latitude-5300-core-i5-8th-gen-8gb-ram-256gb-ssd-13-3">
+      <div class="pcard">
+        <div class="pcard-img">
+          <span class="pbadge badge-stock">In Stock</span>
+          <img data-handle="dell-latitude-5300-core-i5-8th-gen-8gb-ram-256gb-ssd-13-3" alt="Dell Latitude 5300" />
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-brand">Dell</div>
+          <div class="pcard-name">Dell Latitude 5300 Core i5 8th Gen · 8GB RAM · 256GB SSD · 13.3"</div>
+          <div class="pcard-foot">
+            <span class="pcard-price">KSh 25,000</span>
+            <button class="btn-buy">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- MacBook Air -->
+    <a href="https://wealhub.co.ke/products/apple-macbook-air-a1466-13-3-core-i5-8gb-ram-256gb-ssd-2015">
+      <div class="pcard">
+        <div class="pcard-img">
+          <span class="pbadge badge-stock">In Stock</span>
+          <img data-handle="apple-macbook-air-a1466-13-3-core-i5-8gb-ram-256gb-ssd-2015" alt="MacBook Air" />
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-brand">Apple</div>
+          <div class="pcard-name">MacBook Air A1466 13.3" · Core i5 · 8GB RAM · 256GB SSD (2015)</div>
+          <div class="pcard-foot">
+            <span class="pcard-price">KSh 32,000</span>
+            <button class="btn-buy">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Dell Latitude 7280 (Sold Out) -->
+    <a href="https://wealhub.co.ke/products/dell-latitude-7280-intel-core-i5-8gb-256gb">
+      <div class="pcard">
+        <div class="pcard-img">
+          <span class="pbadge badge-sold">Sold Out</span>
+          <img data-handle="dell-latitude-7280-intel-core-i5-8gb-256gb" alt="Dell Latitude 7280" />
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-brand">Dell</div>
+          <div class="pcard-name">Dell Latitude 7280 Touchscreen 12.5" Ultrabook · Core i5 · 8GB · 256GB</div>
+          <div class="pcard-foot">
+            <span class="pcard-price-gray">KSh 25,000</span>
+            <button class="btn-na">Sold Out</button>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Dell Charger -->
+    <a href="https://wealhub.co.ke/products/dell-laptop-charger-19v-4-62a-power-adapter">
+      <div class="pcard">
+        <div class="pcard-img">
+          <span class="pbadge badge-stock">In Stock</span>
+          <img data-handle="dell-laptop-charger-19v-4-62a-power-adapter" alt="Dell Laptop Charger" />
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-brand">Dell</div>
+          <div class="pcard-name">Dell Laptop Charger 19V 4.62A Power Adapter</div>
+          <div class="pcard-foot">
+            <span class="pcard-price">KSh 1,500</span>
+            <button class="btn-buy">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Solar Streetlight -->
+    <a href="https://wealhub.co.ke/products/cclamp-200w-solar-streetlights-38-000-lumens-led-outdoor-lighting">
+      <div class="pcard">
+        <div class="pcard-img">
+          <span class="pbadge badge-stock">In Stock</span>
+          <img data-handle="cclamp-200w-solar-streetlights-38-000-lumens-led-outdoor-lighting" alt="200W Solar Streetlights" />
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-brand">CcLamp</div>
+          <div class="pcard-name">200W Solar Streetlights · 38,000 Lumens LED Outdoor Lighting</div>
+          <div class="pcard-foot">
+            <span class="pcard-price">KSh 2,500</span>
+            <button class="btn-buy">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Bluetooth Dongle -->
+    <a href="https://wealhub.co.ke/products/bluetooth-usb-dongle-adapter-csr-4-0-for-desktop-and-laptop">
+      <div class="pcard">
+        <div class="pcard-img">
+          <span class="pbadge badge-stock">In Stock</span>
+          <img data-handle="bluetooth-usb-dongle-adapter-csr-4-0-for-desktop-and-laptop" alt="Bluetooth USB Dongle" />
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-brand">CSR</div>
+          <div class="pcard-name">Bluetooth USB Dongle Adapter CSR 4.0 for Desktop & Laptop</div>
+          <div class="pcard-foot">
+            <span class="pcard-price">KSh 650</span>
+            <button class="btn-buy">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<!-- PROMO BANNER -->
+<div class="promo">
+  <div>
+    <h2>Need help choosing?<br>We've got you.</h2>
+    <p>Chat with us for expert advice, bulk orders & custom sourcing across Kenya.</p>
+  </div>
+  <div class="promo-right">
+    <div class="promo-phone">0708 398 311</div>
+    <a href="https://wa.me/254708398311" target="_blank">
+      <button class="btn-promo-wa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.523 5.84L.057 23.855c-.073.283.162.54.448.493l6.163-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.37l-.359-.213-3.716.872.93-3.613-.233-.371A9.818 9.818 0 1112 21.818z"/></svg>
+        Chat on WhatsApp
+      </button>
+    </a>
+  </div>
+</div>
+
+<!-- ACCESSORIES -->
+<div class="section section-alt">
+  <div class="sec-head">
+    <div>
+      <h2>Quick Accessories</h2>
+      <div class="sec-sub">Cables, adapters & small essentials — fast delivery</div>
+    </div>
+    <a href="https://wealhub.co.ke">View all →</a>
+  </div>
+  <div class="acc-grid">
+    <a href="https://wealhub.co.ke/products/3m-hdmi-to-vga-cable-male-to-male-hd-audio-video-adapter">
+      <div class="acc-card">
+        <div class="acc-name">3M HDMI to VGA Cable Male to Male HD Audio Video Adapter</div>
+        <div class="acc-price">KSh 500</div>
+      </div>
+    </a>
+    <a href="https://wealhub.co.ke/products/9-pin-rs232-male-to-male-1-5m-cable">
+      <div class="acc-card">
+        <div class="acc-name">9 Pin RS232 Male to Male 1.5m Cable</div>
+        <div class="acc-price">KSh 450</div>
+      </div>
+    </a>
+    <a href="https://wealhub.co.ke/products/bluetooth-usb-dongle-adapter-csr-4-0-for-desktop-and-laptop">
+      <div class="acc-card">
+        <div class="acc-name">Bluetooth USB Dongle Adapter CSR 4.0</div>
+        <div class="acc-price">KSh 650</div>
+      </div>
+    </a>
+    <a href="https://wealhub.co.ke/products/dell-laptop-charger-19v-4-62a-power-adapter">
+      <div class="acc-card">
+        <div class="acc-name">Dell Laptop Charger 19V 4.62A Power Adapter</div>
+        <div class="acc-price">KSh 1,500</div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Weal<em>Hub</em></div>
+      <div class="footer-desc">Your trusted Nairobi marketplace for genuine electronics, laptops, cables and accessories — at prices that make sense for Kenya.</div>
+      <div class="footer-contact">📞 <strong>0708 398 311</strong></div>
+      <div class="footer-contact" style="margin-top:6px">💬 <a href="https://wa.me/254708398311" style="color:#1D9E75;font-weight:600">WhatsApp us</a></div>
+      <div class="footer-contact" style="margin-top:6px">🌐 <a href="https://wealhub.co.ke" style="color:#1D9E75;font-weight:600">wealhub.co.ke</a></div>
+    </div>
+    <div class="fcol">
+      <h5>Shop</h5>
+      <a href="https://wealhub.co.ke">All Products</a>
+      <a href="https://wealhub.co.ke">Laptops</a>
+      <a href="https://wealhub.co.ke">Accessories</a>
+      <a href="https://wealhub.co.ke">Cables & Adapters</a>
+      <a href="https://wealhub.co.ke">Solar & Lighting</a>
+      <a href="https://wealhub.co.ke">Chargers</a>
+    </div>
+    <div class="fcol">
+      <h5>Support</h5>
+      <a href="https://wa.me/254708398311">WhatsApp Us</a>
+      <a href="https://wealhub.co.ke">Track Order</a>
+      <a href="https://wealhub.co.ke">Returns Policy</a>
+      <a href="https://wealhub.co.ke">Warranty Info</a>
+      <a href="https://wealhub.co.ke">FAQs</a>
+    </div>
+    <div class="fcol">
+      <h5>Company</h5>
+      <a href="https://wealhub.co.ke">About Wealhub</a>
+      <a href="https://wealhub.co.ke">Blog</a>
+      <a href="https://wa.me/254708398311">Bulk Orders</a>
+      <a href="https://wealhub.co.ke">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Wealhub · wealhub.co.ke · Nairobi, Kenya</span>
+    <div class="pay-badges">
+      <div class="pay-badge">M-Pesa</div>
+      <div class="pay-badge">Pay on Delivery</div>
+      <div class="pay-badge">Visa / Mastercard</div>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY VISIT STORE BANNER -->
+<div class="store-banner" id="store-banner">
+  <span>This is a preview page —</span>
+  <strong>Shop everything on our full Shopify store</strong>
+  <a href="https://wealhub.co.ke" target="_blank">
+    <button class="btn-visit-store">Visit wealhub.co.ke →</button>
+  </a>
+  <button class="banner-close" onclick="document.getElementById('store-banner').style.display='none'" title="Close">×</button>
+</div>
+
+<script>
+// Auto-load product images from Shopify store
+(async function() {
+  const imgs = document.querySelectorAll('img[data-handle]');
+  const handles = [...new Set([...imgs].map(i => i.dataset.handle))];
+
+  for (const handle of handles) {
+    try {
+      const res = await fetch(`https://wealhub.co.ke/products/${handle}.js`);
+      if (!res.ok) continue;
+      const product = await res.json();
+      const imgUrl = product.featured_image || (product.images && product.images[0]);
+      if (!imgUrl) continue;
+      document.querySelectorAll(`img[data-handle="${handle}"]`).forEach(el => {
+        el.src = imgUrl;
+        el.onerror = () => { el.style.display = 'none'; };
+      });
+    } catch(e) {}
+  }
+})();
+</script>
+
+</body>
+</html>
