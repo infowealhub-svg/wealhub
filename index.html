@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WealHub – Quality Tech at Kenyan Prices</title>
+  <meta name="description" content="WealHub – Your trusted Nairobi marketplace for genuine laptops, cables, accessories and electronics. M-Pesa accepted. Fast delivery across Kenya." />
   <meta name="google-site-verification" content="NYdTY6_QW7-eNyYWsZ8BRhbCeN7TdbDnsJe7I8HmqwM" />
-  <!-- Open Graph / WhatsApp Preview -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://landing.wealhub.co.ke/" />
-<meta property="og:title" content="WealHub – Quality Tech at Kenyan Prices" />
-<meta property="og:description" content="Laptops, accessories, cables & more. Genuine products delivered across Nairobi. M-Pesa accepted, pay on delivery available." />
-<meta property="og:image" content="https://landing.wealhub.co.ke/preview.jpg" />
-<meta name="twitter:card" content="summary_large_image" />
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wealhub – Quality Tech at Kenyan Prices</title>
-  <meta name="description" content="Wealhub – Your trusted Nairobi marketplace for genuine laptops, cables, accessories and electronics. M-Pesa accepted. Fast delivery across Kenya.">
-  <!-- Google Search Console Verification – replace content value with your actual token -->
-  <!-- <meta name="google-site-verification" content="PASTE_YOUR_TOKEN_HERE" /> -->
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://landing.wealhub.co.ke/" />
+  <meta property="og:title" content="WealHub – Quality Tech at Kenyan Prices" />
+  <meta property="og:description" content="Laptops, accessories, cables & more. Genuine products delivered across Nairobi. M-Pesa accepted." />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
     :root {
       --green: #1D9E75;
       --green-dark: #0F6E56;
@@ -28,498 +21,250 @@
       --text: #1a1a1a;
       --text-muted: #555;
       --text-faint: #888;
-      --border: rgba(0,0,0,0.1);
-      --border-soft: rgba(0,0,0,0.06);
-      --bg: #ffffff;
-      --bg-soft: #F8FAF9;
-      --bg-gray: #F4F4F2;
-      --radius: 10px;
-      --radius-lg: 16px;
+      --border: rgba(0,0,0,0.08);
+      --white: #fff;
+      --bg: #f8faf9;
+      --card-bg: #fff;
+      --radius: 14px;
+      --shadow: 0 2px 16px rgba(0,0,0,0.07);
+      --shadow-hover: 0 8px 32px rgba(0,0,0,0.13);
     }
-
-    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--bg); }
-    a { text-decoration: none; color: inherit; }
-    button { cursor: pointer; font-family: inherit; }
-    img { max-width: 100%; display: block; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 
     /* TOPBAR */
-    .topbar {
-      background: var(--green-darker);
-      color: rgba(255,255,255,0.88);
-      font-size: 12.5px;
-      padding: 9px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .topbar strong { color: #9FE1CB; }
+    .topbar { background: var(--green-darker); color: #fff; font-size: 13px; padding: 8px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; }
+    .topbar span { display: flex; align-items: center; gap: 6px; }
+
+    /* HEADER */
+    header { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .header-inner { max-width: 1300px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .logo { font-family: 'Syne', sans-serif; font-size: 26px; font-weight: 800; text-decoration: none; color: var(--text); flex-shrink: 0; }
+    .logo span { color: var(--green); }
+    .search-bar { flex: 1; min-width: 200px; display: flex; gap: 0; }
+    .search-bar input { flex: 1; padding: 10px 16px; border: 2px solid var(--border); border-right: none; border-radius: 8px 0 0 8px; font-size: 14px; font-family: inherit; outline: none; transition: border-color .2s; }
+    .search-bar input:focus { border-color: var(--green); }
+    .search-bar button { background: var(--green); color: #fff; border: none; padding: 10px 20px; border-radius: 0 8px 8px 0; cursor: pointer; font-weight: 600; font-size: 14px; transition: background .2s; }
+    .search-bar button:hover { background: var(--green-dark); }
+    .header-actions { display: flex; gap: 10px; flex-shrink: 0; }
+    .btn { padding: 9px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; border: none; transition: all .2s; font-family: inherit; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; }
+    .btn-whatsapp { background: #25D366; color: #fff; }
+    .btn-whatsapp:hover { background: #1eb557; }
+    .btn-outline { background: transparent; color: var(--green); border: 2px solid var(--green); }
+    .btn-outline:hover { background: var(--green); color: #fff; }
+    .btn-cart { background: var(--green); color: #fff; position: relative; }
+    .btn-cart:hover { background: var(--green-dark); }
+    .cart-count { background: #ff4444; color: #fff; border-radius: 50%; width: 18px; height: 18px; font-size: 11px; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; }
 
     /* NAV */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 40px;
-      border-bottom: 1px solid var(--border-soft);
-      background: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .logo { font-size: 26px; font-weight: 800; letter-spacing: -1px; color: var(--text); }
-    .logo em { color: var(--green); font-style: normal; }
-    .search-wrap {
-      flex: 1;
-      max-width: 380px;
-      margin: 0 28px;
-      display: flex;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      overflow: hidden;
-    }
-    .search-wrap input {
-      border: none;
-      outline: none;
-      padding: 10px 16px;
-      font-size: 13.5px;
-      width: 100%;
-      font-family: inherit;
-      background: #fafafa;
-      color: var(--text);
-    }
-    .search-wrap button {
-      background: var(--green);
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 13px;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-    .search-wrap button:hover { background: var(--green-dark); }
-    .nav-actions { display: flex; gap: 10px; align-items: center; }
-    .btn-wa {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      background: #25D366;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 10px 18px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-    .btn-wa:hover { background: #1ebe5b; }
-    .btn-cart {
-      background: var(--green);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 10px 18px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-    .btn-cart:hover { background: var(--green-dark); }
-
-    /* CATEGORY BAR */
-    .catbar {
-      display: flex;
-      gap: 32px;
-      padding: 11px 40px;
-      background: var(--bg-soft);
-      border-bottom: 1px solid var(--border-soft);
-      font-size: 13.5px;
-      overflow-x: auto;
-    }
-    .catbar a { color: var(--text-muted); white-space: nowrap; font-weight: 500; }
-    .catbar a:hover { color: var(--green); }
-    .catbar a.hot { color: #D85A30; font-weight: 700; }
+    nav { background: #fff; border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1300px; margin: 0 auto; padding: 0 24px; display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; }
+    .nav-inner::-webkit-scrollbar { display: none; }
+    .nav-link { padding: 14px 18px; font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; white-space: nowrap; border-bottom: 3px solid transparent; transition: all .2s; cursor: pointer; }
+    .nav-link:hover, .nav-link.active { color: var(--green); border-bottom-color: var(--green); }
+    .nav-link.deals { color: #e85d04; font-weight: 700; }
 
     /* HERO */
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      min-height: 420px;
-    }
-    .hero-left {
-      padding: 60px 48px;
-      background: var(--bg-soft);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .hero-pill {
-      display: inline-block;
-      background: var(--green-mid);
-      color: var(--green-darker);
-      font-size: 11px;
-      font-weight: 700;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.7px;
-    }
-    .hero-left h1 {
-      font-size: 44px;
-      font-weight: 800;
-      line-height: 1.08;
-      letter-spacing: -2px;
-      margin-bottom: 18px;
-    }
-    .hero-left h1 span { color: var(--green); }
-    .hero-left p {
-      font-size: 15.5px;
-      color: var(--text-muted);
-      line-height: 1.65;
-      max-width: 380px;
-      margin-bottom: 32px;
-    }
-    .hero-stats {
-      display: flex;
-      gap: 32px;
-      margin-bottom: 32px;
-    }
-    .stat-num { font-size: 20px; font-weight: 800; color: var(--green-darker); }
-    .stat-label { font-size: 11.5px; color: var(--text-faint); margin-top: 2px; }
-    .hero-btns { display: flex; gap: 12px; }
-    .btn-primary {
-      background: var(--green);
-      color: white;
-      border: none;
-      padding: 13px 28px;
-      border-radius: 9px;
-      font-size: 14.5px;
-      font-weight: 700;
-    }
-    .btn-primary:hover { background: var(--green-dark); }
-    .btn-outline {
-      background: none;
-      color: var(--green-dark);
-      border: 2px solid var(--green);
-      padding: 13px 28px;
-      border-radius: 9px;
-      font-size: 14.5px;
-      font-weight: 700;
-    }
-    .btn-outline:hover { background: var(--green-light); }
-    .hero-right {
-      background: var(--green);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      padding: 40px;
-    }
-    .hero-ring {
-      position: absolute;
-      border-radius: 50%;
-      border: 36px solid rgba(255,255,255,0.07);
-    }
-    .ring1 { width: 420px; height: 420px; top: -90px; right: -110px; }
-    .ring2 { width: 260px; height: 260px; bottom: -70px; left: 10px; }
-    .hero-card {
-      background: white;
-      border-radius: 18px;
-      padding: 28px 32px;
-      text-align: center;
-      position: relative;
-      z-index: 2;
-      min-width: 210px;
-    }
-    .hero-card-icon {
-      width: 88px;
-      height: 88px;
-      background: var(--green-light);
-      border-radius: 50%;
-      margin: 0 auto 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero-card h3 { font-size: 14px; font-weight: 700; color: var(--green-darker); margin-bottom: 6px; }
-    .hero-card .price { font-size: 22px; font-weight: 800; color: var(--green); }
-    .hero-card .sub { font-size: 11.5px; color: var(--text-faint); margin-top: 3px; }
+    .hero { background: linear-gradient(135deg, #0a4a38 0%, #1D9E75 60%, #25c48d 100%); color: #fff; padding: 60px 24px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; right: -100px; top: -100px; width: 500px; height: 500px; background: rgba(255,255,255,0.04); border-radius: 50%; }
+    .hero-inner { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .hero-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(32px, 5vw, 56px); font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+    .hero h1 span { color: #a8f0d4; }
+    .hero p { font-size: 17px; opacity: 0.85; line-height: 1.6; margin-bottom: 28px; }
+    .hero-stats { display: flex; gap: 32px; margin-bottom: 32px; }
+    .hero-stat strong { display: block; font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; }
+    .hero-stat span { font-size: 13px; opacity: 0.7; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-hero-primary { background: #fff; color: var(--green-darker); padding: 14px 28px; border-radius: 10px; font-weight: 700; font-size: 15px; cursor: pointer; border: none; transition: all .2s; font-family: inherit; }
+    .btn-hero-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .btn-hero-secondary { background: rgba(255,255,255,0.15); color: #fff; padding: 14px 28px; border-radius: 10px; font-weight: 600; font-size: 15px; cursor: pointer; border: 2px solid rgba(255,255,255,0.4); transition: all .2s; font-family: inherit; display: flex; align-items: center; gap: 8px; }
+    .btn-hero-secondary:hover { background: rgba(255,255,255,0.25); }
+    .hero-card { background: #fff; border-radius: 20px; padding: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); color: var(--text); text-align: center; max-width: 280px; margin: 0 auto; }
+    .hero-card img { width: 160px; height: 120px; object-fit: contain; margin-bottom: 12px; }
+    .hero-card-placeholder { width: 160px; height: 120px; background: var(--green-light); border-radius: 12px; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 48px; }
+    .hero-card h3 { font-weight: 700; font-size: 16px; margin-bottom: 4px; }
+    .hero-card .price { color: var(--green); font-size: 22px; font-weight: 800; font-family: 'Syne', sans-serif; }
+    .hero-card .specs { font-size: 12px; color: var(--text-faint); margin-top: 4px; }
 
     /* TRUST STRIP */
-    .trust {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 36px;
-      padding: 18px 40px;
-      background: white;
-      border-bottom: 1px solid var(--border-soft);
-    }
-    .trust-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); font-weight: 500; }
-    .trust-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; flex-shrink: 0; }
+    .trust-strip { background: var(--green-light); padding: 16px 24px; }
+    .trust-inner { max-width: 1300px; margin: 0 auto; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--green-darker); }
 
-    /* SECTIONS */
-    .section { padding: 52px 40px; }
-    .section-alt { background: var(--bg-soft); }
-    .sec-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 28px; }
-    .sec-head h2 { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; }
-    .sec-head .sec-sub { font-size: 13px; color: var(--text-faint); margin-top: 4px; }
-    .sec-head a { font-size: 13.5px; color: var(--green); font-weight: 600; }
-    .sec-head a:hover { color: var(--green-dark); }
+    /* MAIN CONTENT */
+    .main { max-width: 1300px; margin: 0 auto; padding: 40px 24px; }
+    .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+    .section-title { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 700; }
+    .section-sub { color: var(--text-muted); font-size: 14px; margin-top: 4px; }
+    .view-all { color: var(--green); font-weight: 600; font-size: 14px; cursor: pointer; text-decoration: none; display: flex; align-items: center; gap: 4px; }
 
-    /* CATEGORY TILES */
-    .cat-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
-    .cat-tile {
-      background: white;
-      border: 1px solid var(--border-soft);
-      border-radius: var(--radius-lg);
-      padding: 22px 16px;
-      text-align: center;
-      cursor: pointer;
-      transition: border-color 0.15s, transform 0.15s;
-    }
-    .cat-tile:hover { border-color: var(--green); transform: translateY(-2px); }
-    .cat-tile-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 12px;
-      margin: 0 auto 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-    }
-    .cat-tile h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
-    .cat-tile span { font-size: 11.5px; color: var(--text-faint); }
+    /* CATEGORIES */
+    .categories { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 16px; margin-bottom: 48px; }
+    .category-card { background: #fff; border-radius: var(--radius); padding: 20px 16px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all .2s; box-shadow: var(--shadow); text-decoration: none; color: var(--text); }
+    .category-card:hover, .category-card.active { border-color: var(--green); transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .category-icon { font-size: 36px; margin-bottom: 10px; display: block; }
+    .category-card h3 { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+    .category-card p { font-size: 12px; color: var(--text-faint); }
 
-    /* PRODUCT GRID */
-    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .pcard {
-      background: white;
-      border: 1px solid var(--border-soft);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      cursor: pointer;
-      transition: border-color 0.15s, box-shadow 0.15s;
-    }
-    .pcard:hover { border-color: var(--green); box-shadow: 0 4px 20px rgba(29,158,117,0.1); }
-    .pcard-img {
-      height: 180px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--bg-gray);
-      position: relative;
-      padding: 0;
-      overflow: hidden;
-      transition: background 0.2s;
-    }
-    .pcard:hover .pcard-img { background: var(--green-light); }
-    .pcard-img svg { max-width: 110px; max-height: 110px; }
-    .pcard-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s;
-    }
-    .pcard:hover .pcard-img img { transform: scale(1.04); }
-    .pbadge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      font-size: 10px;
-      font-weight: 700;
-      padding: 3px 9px;
-      border-radius: 5px;
-      letter-spacing: 0.3px;
-      text-transform: uppercase;
-    }
-    .badge-stock { background: var(--green); color: white; }
-    .badge-sold { background: #B4B2A9; color: white; }
-    .badge-new { background: #E24B4A; color: white; }
-    .pcard-body { padding: 16px; }
-    .pcard-brand { font-size: 10.5px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 4px; }
-    .pcard-name { font-size: 13.5px; font-weight: 600; line-height: 1.4; margin-bottom: 12px; }
-    .pcard-foot { display: flex; justify-content: space-between; align-items: center; }
-    .pcard-price { font-size: 17px; font-weight: 800; color: var(--green-darker); }
-    .pcard-price-gray { font-size: 17px; font-weight: 800; color: var(--text-faint); }
-    .btn-buy {
-      background: var(--green);
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 12.5px;
-      font-weight: 700;
-    }
+    /* PRODUCTS GRID */
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+    .product-card { background: var(--card-bg); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: all .25s; border: 1px solid var(--border); cursor: pointer; }
+    .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .product-img { height: 200px; background: var(--green-light); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+    .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+    .product-card:hover .product-img img { transform: scale(1.05); }
+    .product-img-placeholder { font-size: 64px; }
+    .product-badge { position: absolute; top: 10px; left: 10px; padding: 4px 10px; border-radius: 50px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    .badge-instock { background: var(--green); color: #fff; }
+    .badge-soldout { background: #999; color: #fff; }
+    .badge-deal { background: #e85d04; color: #fff; }
+    .product-info { padding: 16px; }
+    .product-brand { font-size: 11px; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .product-name { font-size: 14px; font-weight: 600; line-height: 1.4; margin-bottom: 8px; color: var(--text); }
+    .product-price { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--green); margin-bottom: 12px; }
+    .product-actions { display: flex; gap: 8px; }
+    .btn-buy { flex: 1; background: var(--green); color: #fff; border: none; padding: 9px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; transition: background .2s; font-family: inherit; }
     .btn-buy:hover { background: var(--green-dark); }
-    .btn-na {
-      background: var(--bg-gray);
-      color: var(--text-faint);
-      border: none;
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 12.5px;
-      font-weight: 600;
-      cursor: default;
-    }
+    .btn-buy.soldout { background: #ccc; cursor: not-allowed; }
+    .btn-wa { background: #25D366; color: #fff; border: none; padding: 9px 12px; border-radius: 8px; cursor: pointer; font-size: 14px; transition: background .2s; }
+    .btn-wa:hover { background: #1eb557; }
 
-    /* PROMO BANNER */
-    .promo {
-      margin: 0 40px 52px;
-      background: var(--green-darker);
-      border-radius: var(--radius-lg);
-      padding: 40px 52px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .promo h2 { font-size: 28px; font-weight: 800; color: white; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 8px; }
-    .promo p { font-size: 14.5px; color: rgba(255,255,255,0.7); }
-    .promo-right { text-align: right; }
-    .promo-phone { font-size: 26px; font-weight: 800; color: #9FE1CB; margin-bottom: 14px; }
-    .btn-promo-wa {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      background: #25D366;
-      color: white;
-      border: none;
-      border-radius: 9px;
-      padding: 13px 24px;
-      font-size: 14px;
-      font-weight: 700;
-    }
-    .btn-promo-wa:hover { background: #1ebe5b; }
+    /* LOADING */
+    .loading { text-align: center; padding: 60px 20px; color: var(--text-muted); }
+    .spinner { width: 40px; height: 40px; border: 3px solid var(--green-mid); border-top-color: var(--green); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .no-products { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 16px; }
 
-    /* ACCESSORIES MINI GRID */
-    .acc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-    .acc-card {
-      background: white;
-      border: 1px solid var(--border-soft);
-      border-radius: var(--radius);
-      padding: 18px;
-      cursor: pointer;
-      transition: border-color 0.15s;
-    }
-    .acc-card:hover { border-color: var(--green); }
-    .acc-name { font-size: 13px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; color: var(--text); }
-    .acc-price { font-size: 15px; font-weight: 800; color: var(--green-dark); }
+    /* REVIEWS */
+    .reviews-section { background: #fff; border-radius: 20px; padding: 40px; margin: 48px 0; box-shadow: var(--shadow); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 24px; }
+    .review-card { background: var(--bg); border-radius: var(--radius); padding: 20px; border-left: 4px solid var(--green); }
+    .review-stars { color: #f5a623; font-size: 16px; margin-bottom: 8px; }
+    .review-text { font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-bottom: 12px; }
+    .review-author { font-weight: 600; font-size: 14px; }
+    .review-location { font-size: 12px; color: var(--text-faint); }
+
+    /* MPESA BANNER */
+    .mpesa-banner { background: linear-gradient(135deg, #004c3f, #1D9E75); color: #fff; border-radius: 20px; padding: 36px 40px; margin: 48px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .mpesa-banner h2 { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+    .mpesa-banner p { opacity: 0.85; font-size: 15px; line-height: 1.6; }
+    .mpesa-steps { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px; }
+    .mpesa-step { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.1); padding: 10px 16px; border-radius: 10px; font-size: 14px; }
+    .step-num { background: #fff; color: var(--green-darker); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; flex-shrink: 0; }
+
+    /* PAGES */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ABOUT PAGE */
+    .about-hero { background: linear-gradient(135deg, #0a4a38, #1D9E75); color: #fff; padding: 60px 24px; text-align: center; border-radius: 20px; margin-bottom: 40px; }
+    .about-hero h1 { font-family: 'Syne', sans-serif; font-size: 42px; font-weight: 800; margin-bottom: 16px; }
+    .about-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; margin: 40px 0; }
+    .about-card { background: #fff; border-radius: var(--radius); padding: 28px; text-align: center; box-shadow: var(--shadow); }
+    .about-icon { font-size: 40px; margin-bottom: 14px; display: block; }
+    .about-card h3 { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+    .about-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* CONTACT PAGE */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 32px; }
+    .contact-info { background: linear-gradient(135deg, #0a4a38, #1D9E75); color: #fff; border-radius: 20px; padding: 36px; }
+    .contact-info h2 { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; margin-bottom: 24px; }
+    .contact-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 24px; }
+    .contact-item-icon { font-size: 24px; flex-shrink: 0; }
+    .contact-item h4 { font-weight: 600; margin-bottom: 4px; }
+    .contact-item p { opacity: 0.85; font-size: 14px; line-height: 1.5; }
+    .contact-form { background: #fff; border-radius: 20px; padding: 36px; box-shadow: var(--shadow); }
+    .contact-form h2 { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 700; margin-bottom: 24px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 6px; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 11px 14px; border: 2px solid var(--border); border-radius: 8px; font-size: 14px; font-family: inherit; outline: none; transition: border-color .2s; background: var(--bg); }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--green); background: #fff; }
+    .form-group textarea { height: 120px; resize: vertical; }
+    .btn-submit { background: var(--green); color: #fff; border: none; padding: 13px 28px; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; width: 100%; font-family: inherit; transition: background .2s; }
+    .btn-submit:hover { background: var(--green-dark); }
+
+    /* CART MODAL */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; display: none; align-items: flex-start; justify-content: flex-end; }
+    .modal-overlay.open { display: flex; }
+    .cart-modal { background: #fff; width: 420px; max-width: 100vw; height: 100vh; overflow-y: auto; padding: 24px; box-shadow: -8px 0 40px rgba(0,0,0,0.15); }
+    .cart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .cart-header h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; }
+    .cart-close { background: none; border: none; font-size: 24px; cursor: pointer; color: var(--text-muted); }
+    .cart-empty { text-align: center; padding: 60px 20px; color: var(--text-muted); }
+    .cart-item { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--border); }
+    .cart-item-img { width: 70px; height: 70px; background: var(--green-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; overflow: hidden; }
+    .cart-item-img img { width: 100%; height: 100%; object-fit: cover; }
+    .cart-item-info { flex: 1; }
+    .cart-item-name { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .cart-item-price { color: var(--green); font-weight: 700; font-size: 15px; }
+    .cart-item-qty { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+    .qty-btn { background: var(--green-light); border: none; width: 26px; height: 26px; border-radius: 6px; cursor: pointer; font-size: 16px; color: var(--green-darker); font-weight: 700; }
+    .cart-item-remove { background: none; border: none; color: #ff4444; cursor: pointer; font-size: 13px; margin-top: 6px; }
+    .cart-footer { margin-top: 24px; padding-top: 16px; border-top: 2px solid var(--border); }
+    .cart-total { display: flex; justify-content: space-between; font-size: 18px; font-weight: 700; margin-bottom: 16px; }
+    .btn-checkout { background: #25D366; color: #fff; border: none; padding: 14px; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; width: 100%; font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 10px; transition: background .2s; }
+    .btn-checkout:hover { background: #1eb557; }
+    .btn-checkout-mpesa { background: var(--green); color: #fff; border: none; padding: 14px; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; width: 100%; font-family: inherit; transition: background .2s; }
+    .btn-checkout-mpesa:hover { background: var(--green-dark); }
+
+    /* FLOATING WA */
+    .floating-wa { position: fixed; bottom: 28px; right: 28px; z-index: 999; background: #25D366; color: #fff; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 20px rgba(37,211,102,0.4); cursor: pointer; text-decoration: none; transition: transform .2s, box-shadow .2s; }
+    .floating-wa:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(37,211,102,0.5); }
 
     /* FOOTER */
-    footer {
-      background: #F2F4F2;
-      border-top: 1px solid var(--border-soft);
-      padding: 52px 40px 24px;
-    }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
-    .footer-logo { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; }
-    .footer-logo em { color: var(--green); font-style: normal; }
-    .footer-desc { font-size: 13.5px; color: var(--text-muted); line-height: 1.7; margin-bottom: 18px; max-width: 240px; }
-    .footer-contact { font-size: 13.5px; color: var(--text-muted); margin-bottom: 6px; }
-    .footer-contact strong { color: var(--text); }
-    .fcol h5 { font-size: 13.5px; font-weight: 700; margin-bottom: 16px; }
-    .fcol a { display: block; font-size: 13.5px; color: var(--text-muted); margin-bottom: 10px; }
-    .fcol a:hover { color: var(--green); }
-    .footer-bottom {
-      border-top: 1px solid var(--border-soft);
-      padding-top: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 12.5px;
-      color: var(--text-faint);
-    }
+    footer { background: var(--green-darker); color: #fff; margin-top: 60px; }
+    .footer-main { max-width: 1300px; margin: 0 auto; padding: 48px 24px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+    .footer-brand p { opacity: 0.7; font-size: 14px; line-height: 1.7; margin: 14px 0; }
+    .footer-contact a { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.8); font-size: 14px; text-decoration: none; margin-bottom: 8px; }
+    .footer-contact a:hover { color: #fff; }
+    .footer-col h4 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; margin-bottom: 16px; opacity: 0.5; letter-spacing: 1px; text-transform: uppercase; font-size: 12px; }
+    .footer-col a { display: block; color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none; margin-bottom: 8px; cursor: pointer; transition: color .2s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 24px; max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 13px; opacity: 0.6; }
     .pay-badges { display: flex; gap: 8px; }
-    .pay-badge {
-      background: white;
-      border: 1px solid var(--border-soft);
-      border-radius: 6px;
-      padding: 4px 12px;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-muted);
-    }
+    .pay-badge { background: rgba(255,255,255,0.1); padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 600; }
 
-    /* VISIT STORE BANNER */
-    .store-banner {
-      background: #1D9E75;
-      color: white;
-      text-align: center;
-      padding: 13px 20px;
-      font-size: 14px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      position: sticky;
-      bottom: 0;
-      z-index: 200;
-      box-shadow: 0 -4px 20px rgba(0,0,0,0.12);
-    }
-    .store-banner span { opacity: 0.92; font-weight: 400; }
-    .btn-visit-store {
-      background: white;
-      color: #085041;
-      border: none;
-      border-radius: 8px;
-      padding: 9px 22px;
-      font-size: 13.5px;
-      font-weight: 800;
-      cursor: pointer;
-      white-space: nowrap;
-      letter-spacing: -0.2px;
-    }
-    .btn-visit-store:hover { background: #E1F5EE; }
-    .banner-close {
-      background: none;
-      border: none;
-      color: rgba(255,255,255,0.7);
-      font-size: 20px;
-      cursor: pointer;
-      line-height: 1;
-      padding: 0 4px;
-      margin-left: 4px;
-    }
-    .banner-close:hover { color: white; }
+    /* PRODUCT MODAL */
+    .product-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1001; display: none; align-items: center; justify-content: center; padding: 20px; }
+    .product-modal-overlay.open { display: flex; }
+    .product-modal { background: #fff; border-radius: 20px; max-width: 700px; width: 100%; max-height: 90vh; overflow-y: auto; }
+    .product-modal-img { height: 280px; background: var(--green-light); display: flex; align-items: center; justify-content: center; border-radius: 20px 20px 0 0; overflow: hidden; }
+    .product-modal-img img { width: 100%; height: 100%; object-fit: cover; }
+    .product-modal-body { padding: 28px; }
+    .product-modal-brand { font-size: 12px; font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+    .product-modal-name { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; margin-bottom: 10px; }
+    .product-modal-price { font-family: 'Syne', sans-serif; font-size: 32px; font-weight: 800; color: var(--green); margin-bottom: 16px; }
+    .product-modal-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; }
+    .product-modal-actions { display: flex; gap: 12px; }
+    .modal-close-btn { position: absolute; top: 16px; right: 16px; background: rgba(0,0,0,0.3); color: #fff; border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
 
-    /* VISIT STORE NAV BUTTON */
-    .btn-visit-nav {
-      background: white;
-      color: #085041;
-      border: 2px solid #1D9E75;
-      border-radius: 8px;
-      padding: 9px 16px;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-    .btn-visit-nav:hover { background: #E1F5EE; }
+    /* PAGINATION */
+    .pagination { display: flex; justify-content: center; gap: 8px; margin-top: 40px; flex-wrap: wrap; }
+    .page-btn { background: #fff; border: 2px solid var(--border); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 500; transition: all .2s; }
+    .page-btn:hover, .page-btn.active { background: var(--green); color: #fff; border-color: var(--green); }
 
-    /* RESPONSIVE */
+    /* TOAST */
+    .toast { position: fixed; bottom: 100px; right: 28px; background: var(--green-darker); color: #fff; padding: 12px 20px; border-radius: 10px; font-size: 14px; font-weight: 500; z-index: 2000; transform: translateY(100px); opacity: 0; transition: all .3s; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    .toast.show { transform: translateY(0); opacity: 1; }
+
     @media (max-width: 900px) {
-      .topbar { flex-direction: column; gap: 4px; text-align: center; padding: 10px 16px; }
-      nav { padding: 14px 16px; flex-wrap: wrap; gap: 12px; }
-      .search-wrap { max-width: 100%; order: 3; flex: 1 1 100%; margin: 0; }
-      .catbar { padding: 10px 16px; gap: 20px; }
-      .hero { grid-template-columns: 1fr; }
-      .hero-right { min-height: 220px; }
-      .hero-left { padding: 40px 20px; }
-      .hero-left h1 { font-size: 32px; }
-      .section { padding: 36px 20px; }
-      .cat-grid { grid-template-columns: repeat(3, 1fr); }
-      .product-grid { grid-template-columns: repeat(2, 1fr); }
-      .acc-grid { grid-template-columns: repeat(2, 1fr); }
-      .promo { margin: 0 20px 36px; padding: 28px; flex-direction: column; gap: 20px; text-align: center; }
-      .promo-right { text-align: center; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
-      .trust { gap: 18px; justify-content: flex-start; padding: 14px 16px; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .footer-main { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
-      .cat-grid { grid-template-columns: repeat(2, 1fr); }
-      .product-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; gap: 12px; }
+      .topbar { justify-content: center; font-size: 11px; gap: 4px; }
+      .header-inner { padding: 12px 16px; gap: 12px; }
+      .hero { padding: 40px 16px; }
+      .hero-stats { gap: 16px; }
+      .main { padding: 24px 16px; }
+      .footer-main { grid-template-columns: 1fr; gap: 28px; }
+      .mpesa-banner { padding: 24px; }
+      .products-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+      .product-img { height: 150px; }
     }
   </style>
 </head>
@@ -529,346 +274,374 @@
 <div class="topbar">
   <span>📞 Call/WhatsApp: <strong>0708 398 311</strong></span>
   <span>✅ Genuine Products · Fast Nairobi Delivery</span>
-  <span>💳 M-Pesa · Pay on Delivery Available</span>
+  <span>🇰🇪 M-Pesa · Pay on Delivery Available</span>
 </div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#" onclick="showPage('home')">Weal<span>Hub</span></a>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search laptops, cables, accessories..." />
+      <button onclick="doSearch()">Search</button>
+    </div>
+    <div class="header-actions">
+      <a class="btn btn-whatsapp" href="https://wa.me/254708398311" target="_blank">
+        <span>💬</span> WhatsApp
+      </a>
+      <button class="btn btn-outline" onclick="showPage('home')">🏠 Home</button>
+      <button class="btn btn-cart" onclick="openCart()">
+        🛒 Cart <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
 
 <!-- NAV -->
 <nav>
-  <a href="https://wealhub.co.ke" class="logo">Weal<em>Hub</em></a>
-  <div class="search-wrap">
-    <input type="text" placeholder="Search laptops, cables, accessories..." />
-    <button onclick="window.location.href='https://wealhub.co.ke'">Search</button>
-  </div>
-  <div class="nav-actions">
-    <a href="https://wa.me/254708398311" target="_blank">
-      <button class="btn-wa">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.523 5.84L.057 23.855c-.073.283.162.54.448.493l6.163-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.37l-.359-.213-3.716.872.93-3.613-.233-.371A9.818 9.818 0 1112 21.818z"/></svg>
-        WhatsApp
-      </button>
-    </a>
-    <a href="https://wealhub.co.ke" target="_blank">
-      <button class="btn-visit-nav">🛍️ Visit Full Store</button>
-    </a>
-    <a href="https://wealhub.co.ke/cart">
-      <button class="btn-cart">🛒 Cart</button>
-    </a>
+  <div class="nav-inner">
+    <a class="nav-link active" onclick="showPage('home'); setActiveNav(this)">Home</a>
+    <a class="nav-link" onclick="showCategory('all'); setActiveNav(this)">All Products</a>
+    <a class="nav-link" onclick="showCategory('laptops'); setActiveNav(this)">Laptops</a>
+    <a class="nav-link" onclick="showCategory('accessories'); setActiveNav(this)">Accessories</a>
+    <a class="nav-link" onclick="showCategory('cables'); setActiveNav(this)">Cables & Adapters</a>
+    <a class="nav-link" onclick="showCategory('solar'); setActiveNav(this)">Solar & Lighting</a>
+    <a class="nav-link" onclick="showCategory('chargers'); setActiveNav(this)">Chargers</a>
+    <a class="nav-link" onclick="showPage('about'); setActiveNav(this)">About Us</a>
+    <a class="nav-link" onclick="showPage('contact'); setActiveNav(this)">Contact</a>
+    <a class="nav-link deals" onclick="showCategory('deals'); setActiveNav(this)">🔥 Deals</a>
   </div>
 </nav>
 
-<!-- CATEGORY BAR -->
-<div class="catbar">
-  <a href="https://wealhub.co.ke">All Products</a>
-  <a href="https://wealhub.co.ke">Laptops</a>
-  <a href="https://wealhub.co.ke">Accessories</a>
-  <a href="https://wealhub.co.ke">Cables & Adapters</a>
-  <a href="https://wealhub.co.ke">Solar & Lighting</a>
-  <a href="https://wealhub.co.ke">Chargers</a>
-  <a href="https://wealhub.co.ke" class="hot">🔥 Deals</a>
-</div>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-left">
-    <div class="hero-pill">Nairobi's Trusted Tech Store</div>
-    <h1>Quality Tech at<br><span>Kenyan Prices.</span></h1>
-    <p>Laptops, accessories, cables & more — genuine products delivered across Nairobi. M-Pesa accepted, pay on delivery available.</p>
-    <div class="hero-stats">
-      <div><div class="stat-num">500+</div><div class="stat-label">Products</div></div>
-      <div><div class="stat-num">KSh 450</div><div class="stat-label">Starts from</div></div>
-      <div><div class="stat-num">Same Day</div><div class="stat-label">Nairobi Delivery</div></div>
-    </div>
-    <div class="hero-btns">
-      <a href="https://wealhub.co.ke"><button class="btn-primary">Shop Now</button></a>
-      <a href="https://wa.me/254708398311" target="_blank"><button class="btn-outline">WhatsApp Order</button></a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-ring ring1"></div>
-    <div class="hero-ring ring2"></div>
-    <div class="hero-card">
-      <div class="hero-card-icon" style="overflow:hidden;border-radius:50%">
-        <img id="hero-img" data-handle="dell-latitude-5300-core-i5-8th-gen-8gb-ram-256gb-ssd-13-3"
-          alt="Dell Latitude 5300"
-          style="width:88px;height:88px;object-fit:cover;border-radius:50%" />
+<!-- HOME PAGE -->
+<div class="page active" id="page-home">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">Nairobi's Trusted Tech Store</div>
+        <h1>Quality Tech at<br/><span>Kenyan Prices.</span></h1>
+        <p>Laptops, accessories, cables & more — genuine products delivered across Nairobi. M-Pesa accepted, pay on delivery available.</p>
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>500+</strong><span>Products</span></div>
+          <div class="hero-stat"><strong>KSh 450</strong><span>Starts from</span></div>
+          <div class="hero-stat"><strong>Same Day</strong><span>Nairobi Delivery</span></div>
+        </div>
+        <div class="hero-btns">
+          <button class="btn-hero-primary" onclick="showCategory('all')">Shop Now →</button>
+          <button class="btn-hero-secondary" onclick="window.open('https://wa.me/254708398311','_blank')">💬 WhatsApp Order</button>
+        </div>
       </div>
-      <h3>Dell Latitude 5300</h3>
-      <div class="price">KSh 25,000</div>
-      <div class="sub">Core i5 · 8GB · 256GB SSD</div>
+      <div style="display:flex;justify-content:center;">
+        <div class="hero-card" id="heroCard">
+          <div class="hero-card-placeholder">💻</div>
+          <h3>Dell Latitude 5300</h3>
+          <div class="price">KSh 25,000</div>
+          <div class="specs">Core i5 · 8GB · 256GB SSD</div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- TRUST STRIP -->
-<div class="trust">
-  <div class="trust-item"><div class="trust-dot"></div>Genuine Products</div>
-  <div class="trust-item"><div class="trust-dot"></div>M-Pesa Accepted</div>
-  <div class="trust-item"><div class="trust-dot"></div>Fast Nairobi Delivery</div>
-  <div class="trust-item"><div class="trust-dot"></div>Pay on Delivery</div>
-  <div class="trust-item"><div class="trust-dot"></div>WhatsApp Support</div>
-  <div class="trust-item"><div class="trust-dot"></div>Warranty Included</div>
-</div>
-
-<!-- CATEGORIES -->
-<div class="section section-alt">
-  <div class="sec-head">
-    <div>
-      <h2>Shop by Category</h2>
-      <div class="sec-sub">Browse our full range of products</div>
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="trust-inner">
+      <div class="trust-item">✅ Genuine Products</div>
+      <div class="trust-item">🚚 Same Day Nairobi Delivery</div>
+      <div class="trust-item">📱 M-Pesa Accepted</div>
+      <div class="trust-item">🔄 Easy Returns</div>
+      <div class="trust-item">💬 WhatsApp Support</div>
     </div>
-    <a href="https://wealhub.co.ke">View all →</a>
   </div>
-  <div class="cat-grid">
-    <a href="https://wealhub.co.ke">
-      <div class="cat-tile">
-        <div class="cat-tile-icon" style="background:#E1F5EE">💻</div>
-        <h4>Laptops</h4>
-        <span>From KSh 25,000</span>
-      </div>
-    </a>
-    <a href="https://wealhub.co.ke">
-      <div class="cat-tile">
-        <div class="cat-tile-icon" style="background:#E6F1FB">🔌</div>
-        <h4>Cables & Adapters</h4>
-        <span>From KSh 450</span>
-      </div>
-    </a>
-    <a href="https://wealhub.co.ke">
-      <div class="cat-tile">
-        <div class="cat-tile-icon" style="background:#FAEEDA">🔋</div>
-        <h4>Chargers</h4>
-        <span>From KSh 1,500</span>
-      </div>
-    </a>
-    <a href="https://wealhub.co.ke">
-      <div class="cat-tile">
-        <div class="cat-tile-icon" style="background:#EAF3DE">☀️</div>
-        <h4>Solar & Lighting</h4>
-        <span>From KSh 2,500</span>
-      </div>
-    </a>
-    <a href="https://wealhub.co.ke">
-      <div class="cat-tile">
-        <div class="cat-tile-icon" style="background:#FBEAF0">📡</div>
-        <h4>Accessories</h4>
-        <span>From KSh 650</span>
-      </div>
-    </a>
-  </div>
-</div>
 
-<!-- FEATURED PRODUCTS -->
-<div class="section">
-  <div class="sec-head">
-    <div>
-      <h2>Featured Products</h2>
-      <div class="sec-sub">Handpicked from our latest stock</div>
+  <div class="main">
+    <!-- CATEGORIES -->
+    <div class="section-header">
+      <div>
+        <div class="section-title">Shop by Category</div>
+        <div class="section-sub">Browse our full range of products</div>
+      </div>
     </div>
-    <a href="https://wealhub.co.ke">View all products →</a>
-  </div>
-  <div class="product-grid">
+    <div class="categories">
+      <a class="category-card" onclick="showCategory('laptops')">
+        <span class="category-icon">💻</span>
+        <h3>Laptops</h3>
+        <p>From KSh 25,000</p>
+      </a>
+      <a class="category-card" onclick="showCategory('cables')">
+        <span class="category-icon">🔌</span>
+        <h3>Cables & Adapters</h3>
+        <p>From KSh 450</p>
+      </a>
+      <a class="category-card" onclick="showCategory('chargers')">
+        <span class="category-icon">🔋</span>
+        <h3>Chargers</h3>
+        <p>From KSh 1,500</p>
+      </a>
+      <a class="category-card" onclick="showCategory('solar')">
+        <span class="category-icon">☀️</span>
+        <h3>Solar & Lighting</h3>
+        <p>From KSh 2,500</p>
+      </a>
+      <a class="category-card" onclick="showCategory('accessories')">
+        <span class="category-icon">🖱️</span>
+        <h3>Accessories</h3>
+        <p>From KSh 650</p>
+      </a>
+      <a class="category-card" onclick="showCategory('deals')">
+        <span class="category-icon">🔥</span>
+        <h3>Hot Deals</h3>
+        <p>Limited offers</p>
+      </a>
+    </div>
 
-    <!-- Dell Latitude 5300 -->
-    <a href="https://wealhub.co.ke/products/dell-latitude-5300-core-i5-8th-gen-8gb-ram-256gb-ssd-13-3">
-      <div class="pcard">
-        <div class="pcard-img">
-          <span class="pbadge badge-stock">In Stock</span>
-          <img data-handle="dell-latitude-5300-core-i5-8th-gen-8gb-ram-256gb-ssd-13-3" alt="Dell Latitude 5300" />
-        </div>
-        <div class="pcard-body">
-          <div class="pcard-brand">Dell</div>
-          <div class="pcard-name">Dell Latitude 5300 Core i5 8th Gen · 8GB RAM · 256GB SSD · 13.3"</div>
-          <div class="pcard-foot">
-            <span class="pcard-price">KSh 25,000</span>
-            <button class="btn-buy">Buy Now</button>
-          </div>
+    <!-- FEATURED PRODUCTS -->
+    <div class="section-header">
+      <div>
+        <div class="section-title">Featured Products</div>
+        <div class="section-sub">Handpicked from our latest stock</div>
+      </div>
+      <a class="view-all" onclick="showCategory('all')">View all →</a>
+    </div>
+    <div id="featuredProducts">
+      <div class="loading"><div class="spinner"></div>Loading products...</div>
+    </div>
+
+    <!-- MPESA BANNER -->
+    <div class="mpesa-banner">
+      <div>
+        <h2>🇰🇪 Pay with M-Pesa</h2>
+        <p>Simple, secure and fast payments. Pay on delivery also available across Nairobi.</p>
+        <div class="mpesa-steps">
+          <div class="mpesa-step"><div class="step-num">1</div> Add to Cart</div>
+          <div class="mpesa-step"><div class="step-num">2</div> WhatsApp Us</div>
+          <div class="mpesa-step"><div class="step-num">3</div> Pay via M-Pesa</div>
+          <div class="mpesa-step"><div class="step-num">4</div> Get Delivered</div>
         </div>
       </div>
-    </a>
+      <button class="btn-hero-primary" onclick="window.open('https://wa.me/254708398311','_blank')">Order Now via WhatsApp</button>
+    </div>
 
-    <!-- MacBook Air -->
-    <a href="https://wealhub.co.ke/products/apple-macbook-air-a1466-13-3-core-i5-8gb-ram-256gb-ssd-2015">
-      <div class="pcard">
-        <div class="pcard-img">
-          <span class="pbadge badge-stock">In Stock</span>
-          <img data-handle="apple-macbook-air-a1466-13-3-core-i5-8gb-ram-256gb-ssd-2015" alt="MacBook Air" />
+    <!-- REVIEWS -->
+    <div class="reviews-section">
+      <div class="section-header">
+        <div>
+          <div class="section-title">What Our Customers Say</div>
+          <div class="section-sub">Trusted by hundreds of Nairobi customers</div>
         </div>
-        <div class="pcard-body">
-          <div class="pcard-brand">Apple</div>
-          <div class="pcard-name">MacBook Air A1466 13.3" · Core i5 · 8GB RAM · 256GB SSD (2015)</div>
-          <div class="pcard-foot">
-            <span class="pcard-price">KSh 32,000</span>
-            <button class="btn-buy">Buy Now</button>
-          </div>
+        <div style="color:var(--green);font-weight:700;font-size:18px;">⭐ 4.9/5</div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Got my Dell laptop delivered same day. Works perfectly and the price was unbeatable. M-Pesa payment was so easy!"</div>
+          <div class="review-author">James Mwangi</div>
+          <div class="review-location">📍 Nairobi, Kenya</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Ordered cables and a charger via WhatsApp. Arrived within 2 hours! Great service and genuine products."</div>
+          <div class="review-author">Wanjiku Kamau</div>
+          <div class="review-location">📍 Westlands, Nairobi</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Best prices for laptops in Nairobi. WealHub delivered my MacBook fast and it came with a warranty. Highly recommend!"</div>
+          <div class="review-author">Brian Otieno</div>
+          <div class="review-location">📍 Kilimani, Nairobi</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★⭐</div>
+          <div class="review-text">"Solar lights are amazing quality. Bought 3 for my home and the delivery was on time. Will order again."</div>
+          <div class="review-author">Grace Njeri</div>
+          <div class="review-location">📍 Karen, Nairobi</div>
         </div>
       </div>
-    </a>
-
-    <!-- Dell Latitude 7280 (Sold Out) -->
-    <a href="https://wealhub.co.ke/products/dell-latitude-7280-intel-core-i5-8gb-256gb">
-      <div class="pcard">
-        <div class="pcard-img">
-          <span class="pbadge badge-sold">Sold Out</span>
-          <img data-handle="dell-latitude-7280-intel-core-i5-8gb-256gb" alt="Dell Latitude 7280" />
-        </div>
-        <div class="pcard-body">
-          <div class="pcard-brand">Dell</div>
-          <div class="pcard-name">Dell Latitude 7280 Touchscreen 12.5" Ultrabook · Core i5 · 8GB · 256GB</div>
-          <div class="pcard-foot">
-            <span class="pcard-price-gray">KSh 25,000</span>
-            <button class="btn-na">Sold Out</button>
-          </div>
-        </div>
-      </div>
-    </a>
-
-    <!-- Dell Charger -->
-    <a href="https://wealhub.co.ke/products/dell-laptop-charger-19v-4-62a-power-adapter">
-      <div class="pcard">
-        <div class="pcard-img">
-          <span class="pbadge badge-stock">In Stock</span>
-          <img data-handle="dell-laptop-charger-19v-4-62a-power-adapter" alt="Dell Laptop Charger" />
-        </div>
-        <div class="pcard-body">
-          <div class="pcard-brand">Dell</div>
-          <div class="pcard-name">Dell Laptop Charger 19V 4.62A Power Adapter</div>
-          <div class="pcard-foot">
-            <span class="pcard-price">KSh 1,500</span>
-            <button class="btn-buy">Buy Now</button>
-          </div>
-        </div>
-      </div>
-    </a>
-
-    <!-- Solar Streetlight -->
-    <a href="https://wealhub.co.ke/products/cclamp-200w-solar-streetlights-38-000-lumens-led-outdoor-lighting">
-      <div class="pcard">
-        <div class="pcard-img">
-          <span class="pbadge badge-stock">In Stock</span>
-          <img data-handle="cclamp-200w-solar-streetlights-38-000-lumens-led-outdoor-lighting" alt="200W Solar Streetlights" />
-        </div>
-        <div class="pcard-body">
-          <div class="pcard-brand">CcLamp</div>
-          <div class="pcard-name">200W Solar Streetlights · 38,000 Lumens LED Outdoor Lighting</div>
-          <div class="pcard-foot">
-            <span class="pcard-price">KSh 2,500</span>
-            <button class="btn-buy">Buy Now</button>
-          </div>
-        </div>
-      </div>
-    </a>
-
-    <!-- Bluetooth Dongle -->
-    <a href="https://wealhub.co.ke/products/bluetooth-usb-dongle-adapter-csr-4-0-for-desktop-and-laptop">
-      <div class="pcard">
-        <div class="pcard-img">
-          <span class="pbadge badge-stock">In Stock</span>
-          <img data-handle="bluetooth-usb-dongle-adapter-csr-4-0-for-desktop-and-laptop" alt="Bluetooth USB Dongle" />
-        </div>
-        <div class="pcard-body">
-          <div class="pcard-brand">CSR</div>
-          <div class="pcard-name">Bluetooth USB Dongle Adapter CSR 4.0 for Desktop & Laptop</div>
-          <div class="pcard-foot">
-            <span class="pcard-price">KSh 650</span>
-            <button class="btn-buy">Buy Now</button>
-          </div>
-        </div>
-      </div>
-    </a>
-
+    </div>
   </div>
 </div>
 
-<!-- PROMO BANNER -->
-<div class="promo">
-  <div>
-    <h2>Need help choosing?<br>We've got you.</h2>
-    <p>Chat with us for expert advice, bulk orders & custom sourcing across Kenya.</p>
-  </div>
-  <div class="promo-right">
-    <div class="promo-phone">0708 398 311</div>
-    <a href="https://wa.me/254708398311" target="_blank">
-      <button class="btn-promo-wa">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.523 5.84L.057 23.855c-.073.283.162.54.448.493l6.163-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.37l-.359-.213-3.716.872.93-3.613-.233-.371A9.818 9.818 0 1112 21.818z"/></svg>
-        Chat on WhatsApp
-      </button>
-    </a>
+<!-- PRODUCTS PAGE -->
+<div class="page" id="page-products">
+  <div class="main">
+    <div class="section-header">
+      <div>
+        <div class="section-title" id="productsPageTitle">All Products</div>
+        <div class="section-sub" id="productsPageSub">Browse our full catalogue</div>
+      </div>
+      <select id="sortSelect" onchange="sortProducts()" style="padding:8px 14px;border:2px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;outline:none;cursor:pointer;">
+        <option value="default">Sort by: Default</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="name">Name A–Z</option>
+      </select>
+    </div>
+    <div id="productsGrid">
+      <div class="loading"><div class="spinner"></div>Loading products...</div>
+    </div>
+    <div class="pagination" id="pagination"></div>
   </div>
 </div>
 
-<!-- ACCESSORIES -->
-<div class="section section-alt">
-  <div class="sec-head">
-    <div>
-      <h2>Quick Accessories</h2>
-      <div class="sec-sub">Cables, adapters & small essentials — fast delivery</div>
+<!-- ABOUT PAGE -->
+<div class="page" id="page-about">
+  <div class="main">
+    <div class="about-hero">
+      <h1>About WealHub</h1>
+      <p style="font-size:18px;opacity:0.85;max-width:600px;margin:0 auto;">Nairobi's trusted marketplace for genuine electronics, laptops, cables and accessories — at prices that make sense for Kenya.</p>
     </div>
-    <a href="https://wealhub.co.ke">View all →</a>
+    <div class="about-grid">
+      <div class="about-card">
+        <span class="about-icon">🏆</span>
+        <h3>Genuine Products</h3>
+        <p>Every product we sell is 100% genuine and quality-tested. No counterfeits, no shortcuts.</p>
+      </div>
+      <div class="about-card">
+        <span class="about-icon">🚚</span>
+        <h3>Same Day Delivery</h3>
+        <p>Order before 2PM and get your items delivered same day anywhere in Nairobi.</p>
+      </div>
+      <div class="about-card">
+        <span class="about-icon">📱</span>
+        <h3>M-Pesa Payments</h3>
+        <p>Pay easily and securely via M-Pesa. Pay on delivery also available for all Nairobi orders.</p>
+      </div>
+      <div class="about-card">
+        <span class="about-icon">🔄</span>
+        <h3>Easy Returns</h3>
+        <p>Not satisfied? Return within 7 days for a full refund. No questions asked.</p>
+      </div>
+      <div class="about-card">
+        <span class="about-icon">💬</span>
+        <h3>WhatsApp Support</h3>
+        <p>Get instant support on WhatsApp. Our team responds within minutes, 7 days a week.</p>
+      </div>
+      <div class="about-card">
+        <span class="about-icon">💰</span>
+        <h3>Best Prices</h3>
+        <p>We source directly to give you the best prices on genuine tech products in Nairobi.</p>
+      </div>
+    </div>
+    <div class="mpesa-banner" style="margin-top:0;">
+      <div>
+        <h2>Ready to shop?</h2>
+        <p>Browse 500+ genuine tech products at Kenyan prices. Fast delivery, M-Pesa accepted.</p>
+      </div>
+      <button class="btn-hero-primary" onclick="showCategory('all')">Shop Now →</button>
+    </div>
   </div>
-  <div class="acc-grid">
-    <a href="https://wealhub.co.ke/products/3m-hdmi-to-vga-cable-male-to-male-hd-audio-video-adapter">
-      <div class="acc-card">
-        <div class="acc-name">3M HDMI to VGA Cable Male to Male HD Audio Video Adapter</div>
-        <div class="acc-price">KSh 500</div>
+</div>
+
+<!-- CONTACT PAGE -->
+<div class="page" id="page-contact">
+  <div class="main">
+    <div class="section-title" style="font-size:32px;margin-bottom:8px;">Contact Us</div>
+    <div class="section-sub">We're here to help. Reach out via WhatsApp, phone or email.</div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Get in Touch</h2>
+        <div class="contact-item">
+          <div class="contact-item-icon">📞</div>
+          <div>
+            <h4>Phone / WhatsApp</h4>
+            <p>0708 398 311<br/>Available 8AM – 8PM daily</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">💬</div>
+          <div>
+            <h4>WhatsApp</h4>
+            <p>Fastest way to reach us. Get a response within minutes.</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🌐</div>
+          <div>
+            <h4>Full Store</h4>
+            <p>wealhub.co.ke</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div>
+            <h4>Location</h4>
+            <p>Nairobi, Kenya<br/>Delivery across all of Nairobi</p>
+          </div>
+        </div>
+        <a href="https://wa.me/254708398311" target="_blank" class="btn btn-whatsapp" style="width:100%;justify-content:center;margin-top:8px;padding:14px;">
+          💬 Chat on WhatsApp Now
+        </a>
       </div>
-    </a>
-    <a href="https://wealhub.co.ke/products/9-pin-rs232-male-to-male-1-5m-cable">
-      <div class="acc-card">
-        <div class="acc-name">9 Pin RS232 Male to Male 1.5m Cable</div>
-        <div class="acc-price">KSh 450</div>
+      <div class="contact-form">
+        <h2>Send a Message</h2>
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="e.g. John Kamau" />
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="e.g. 0712 345 678" />
+        </div>
+        <div class="form-group">
+          <label>What are you looking for?</label>
+          <select>
+            <option>Select a category</option>
+            <option>Laptops</option>
+            <option>Accessories</option>
+            <option>Cables & Adapters</option>
+            <option>Solar & Lighting</option>
+            <option>Chargers</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell us what you need..."></textarea>
+        </div>
+        <button class="btn-submit" onclick="sendWhatsAppMessage()">Send via WhatsApp 💬</button>
       </div>
-    </a>
-    <a href="https://wealhub.co.ke/products/bluetooth-usb-dongle-adapter-csr-4-0-for-desktop-and-laptop">
-      <div class="acc-card">
-        <div class="acc-name">Bluetooth USB Dongle Adapter CSR 4.0</div>
-        <div class="acc-price">KSh 650</div>
-      </div>
-    </a>
-    <a href="https://wealhub.co.ke/products/dell-laptop-charger-19v-4-62a-power-adapter">
-      <div class="acc-card">
-        <div class="acc-name">Dell Laptop Charger 19V 4.62A Power Adapter</div>
-        <div class="acc-price">KSh 1,500</div>
-      </div>
-    </a>
+    </div>
   </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-grid">
-    <div>
-      <div class="footer-logo">Weal<em>Hub</em></div>
-      <div class="footer-desc">Your trusted Nairobi marketplace for genuine electronics, laptops, cables and accessories — at prices that make sense for Kenya.</div>
-      <div class="footer-contact">📞 <strong>0708 398 311</strong></div>
-      <div class="footer-contact" style="margin-top:6px">💬 <a href="https://wa.me/254708398311" style="color:#1D9E75;font-weight:600">WhatsApp us</a></div>
-      <div class="footer-contact" style="margin-top:6px">🌐 <a href="https://wealhub.co.ke" style="color:#1D9E75;font-weight:600">wealhub.co.ke</a></div>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="logo" style="color:#fff;">Weal<span style="color:#a8f0d4;">Hub</span></div>
+      <p>Your trusted Nairobi marketplace for genuine electronics, laptops, cables and accessories — at prices that make sense for Kenya.</p>
+      <div class="footer-contact">
+        <a href="tel:0708398311">📞 0708 398 311</a>
+        <a href="https://wa.me/254708398311" target="_blank">💬 WhatsApp us</a>
+        <a href="https://wealhub.co.ke" target="_blank">🌐 wealhub.co.ke</a>
+      </div>
     </div>
-    <div class="fcol">
-      <h5>Shop</h5>
-      <a href="https://wealhub.co.ke">All Products</a>
-      <a href="https://wealhub.co.ke">Laptops</a>
-      <a href="https://wealhub.co.ke">Accessories</a>
-      <a href="https://wealhub.co.ke">Cables & Adapters</a>
-      <a href="https://wealhub.co.ke">Solar & Lighting</a>
-      <a href="https://wealhub.co.ke">Chargers</a>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a onclick="showCategory('all')">All Products</a>
+      <a onclick="showCategory('laptops')">Laptops</a>
+      <a onclick="showCategory('accessories')">Accessories</a>
+      <a onclick="showCategory('cables')">Cables & Adapters</a>
+      <a onclick="showCategory('solar')">Solar & Lighting</a>
+      <a onclick="showCategory('chargers')">Chargers</a>
     </div>
-    <div class="fcol">
-      <h5>Support</h5>
-      <a href="https://wa.me/254708398311">WhatsApp Us</a>
-      <a href="https://wealhub.co.ke">Track Order</a>
-      <a href="https://wealhub.co.ke">Returns Policy</a>
-      <a href="https://wealhub.co.ke">Warranty Info</a>
-      <a href="https://wealhub.co.ke">FAQs</a>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="https://wa.me/254708398311" target="_blank">WhatsApp Us</a>
+      <a onclick="showPage('contact')">Contact Us</a>
+      <a>Returns Policy</a>
+      <a>Warranty Info</a>
+      <a>FAQs</a>
     </div>
-    <div class="fcol">
-      <h5>Company</h5>
-      <a href="https://wealhub.co.ke">About Wealhub</a>
-      <a href="https://wealhub.co.ke">Blog</a>
-      <a href="https://wa.me/254708398311">Bulk Orders</a>
-      <a href="https://wealhub.co.ke">Contact Us</a>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a onclick="showPage('about')">About WealHub</a>
+      <a href="https://wa.me/254708398311?text=Hi, I'm interested in bulk orders" target="_blank">Bulk Orders</a>
+      <a href="https://wealhub.co.ke" target="_blank">Full Shopify Store</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Wealhub · wealhub.co.ke · Nairobi, Kenya</span>
+    <span>© 2026 WealHub · wealhub.co.ke · Nairobi, Kenya</span>
     <div class="pay-badges">
       <div class="pay-badge">M-Pesa</div>
       <div class="pay-badge">Pay on Delivery</div>
@@ -877,28 +650,444 @@
   </div>
 </footer>
 
+<!-- FLOATING WHATSAPP -->
+<a class="floating-wa" href="https://wa.me/254708398311" target="_blank" title="Chat on WhatsApp">💬</a>
+
+<!-- CART MODAL -->
+<div class="modal-overlay" id="cartModal" onclick="closeCartOutside(event)">
+  <div class="cart-modal">
+    <div class="cart-header">
+      <h2>🛒 Your Cart</h2>
+      <button class="cart-close" onclick="closeCart()">✕</button>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotal">KSh 0</span>
+      </div>
+      <button class="btn-checkout" onclick="checkoutWhatsApp()">💬 Order via WhatsApp</button>
+      <button class="btn-checkout-mpesa" onclick="checkoutWhatsApp()">📱 Pay with M-Pesa</button>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCT MODAL -->
+<div class="product-modal-overlay" id="productModal" onclick="closeProductModalOutside(event)">
+  <div class="product-modal" style="position:relative;">
+    <button class="modal-close-btn" onclick="closeProductModal()">✕</button>
+    <div class="product-modal-img" id="productModalImg"></div>
+    <div class="product-modal-body">
+      <div class="product-modal-brand" id="productModalBrand"></div>
+      <div class="product-modal-name" id="productModalName"></div>
+      <div class="product-modal-price" id="productModalPrice"></div>
+      <div class="product-modal-desc" id="productModalDesc"></div>
+      <div class="product-modal-actions">
+        <button class="btn-buy" style="flex:1;padding:14px;font-size:15px;" id="productModalBuy">Add to Cart</button>
+        <button class="btn-wa" style="padding:14px 20px;font-size:18px;" id="productModalWA">💬</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
 
 <script>
-// Auto-load product images from Shopify store
-(async function() {
-  const imgs = document.querySelectorAll('img[data-handle]');
-  const handles = [...new Set([...imgs].map(i => i.dataset.handle))];
+  // ============ STATE ============
+  let allProducts = [];
+  let cart = JSON.parse(localStorage.getItem('wealhub_cart') || '[]');
+  let currentPage = 1;
+  const ITEMS_PER_PAGE = 12;
+  let currentCategory = 'all';
+  let currentSort = 'default';
+  let currentSearch = '';
 
-  for (const handle of handles) {
-    try {
-      const res = await fetch(`https://wealhub.co.ke/products/${handle}.js`);
-      if (!res.ok) continue;
-      const product = await res.json();
-      const imgUrl = product.featured_image || (product.images && product.images[0]);
-      if (!imgUrl) continue;
-      document.querySelectorAll(`img[data-handle="${handle}"]`).forEach(el => {
-        el.src = imgUrl;
-        el.onerror = () => { el.style.display = 'none'; };
-      });
-    } catch(e) {}
+  // ============ SHOPIFY FETCH ============
+  const SHOPIFY_BASE = 'https://wealhub.co.ke';
+
+  // Category tag mapping
+  const categoryTags = {
+    laptops: ['laptop', 'laptops', 'notebook'],
+    accessories: ['accessory', 'accessories', 'mouse', 'keyboard', 'headset', 'webcam', 'usb', 'dongle', 'hub'],
+    cables: ['cable', 'cables', 'adapter', 'adapters', 'hdmi', 'usb-c', 'displayport'],
+    solar: ['solar', 'lighting', 'light', 'streetlight', 'bulb'],
+    chargers: ['charger', 'chargers', 'power', 'supply']
+  };
+
+  async function fetchAllProducts() {
+    let products = [];
+    let page = 1;
+    while (true) {
+      try {
+        const res = await fetch(`${SHOPIFY_BASE}/products.json?limit=250&page=${page}`);
+        if (!res.ok) break;
+        const data = await res.json();
+        if (!data.products || data.products.length === 0) break;
+        products = [...products, ...data.products];
+        if (data.products.length < 250) break;
+        page++;
+      } catch(e) { break; }
+    }
+    return products;
   }
-})();
-</script>
 
+  function getProductCategory(product) {
+    const text = (product.title + ' ' + (product.product_type || '') + ' ' + (product.tags || '')).toLowerCase();
+    for (const [cat, keywords] of Object.entries(categoryTags)) {
+      if (keywords.some(k => text.includes(k))) return cat;
+    }
+    return 'accessories';
+  }
+
+  function getProductPrice(product) {
+    const v = product.variants?.[0];
+    if (!v) return 0;
+    return parseFloat(v.price) || 0;
+  }
+
+  function formatPrice(p) {
+    return 'KSh ' + Math.round(p).toLocaleString();
+  }
+
+  function isAvailable(product) {
+    return product.variants?.some(v => v.available) || false;
+  }
+
+  function getProductImage(product) {
+    return product.images?.[0]?.src || null;
+  }
+
+  function getCategoryEmoji(cat) {
+    const map = { laptops:'💻', cables:'🔌', chargers:'🔋', solar:'☀️', accessories:'🖱️' };
+    return map[cat] || '📦';
+  }
+
+  // ============ RENDER PRODUCTS ============
+  function renderProductCard(product) {
+    const price = getProductPrice(product);
+    const available = isAvailable(product);
+    const img = getProductImage(product);
+    const cat = getProductCategory(product);
+    const emoji = getCategoryEmoji(cat);
+    const brand = product.vendor || '';
+
+    return `
+      <div class="product-card" onclick="openProductModal(${product.id})">
+        <div class="product-img">
+          ${img
+            ? `<img src="${img}" alt="${product.title}" loading="lazy" onerror="this.style.display='none';this.nextSibling.style.display='flex'"/><div class="product-img-placeholder" style="display:none">${emoji}</div>`
+            : `<div class="product-img-placeholder">${emoji}</div>`
+          }
+          <div class="product-badge ${available ? 'badge-instock' : 'badge-soldout'}">${available ? 'In Stock' : 'Sold Out'}</div>
+        </div>
+        <div class="product-info">
+          ${brand ? `<div class="product-brand">${brand}</div>` : ''}
+          <div class="product-name">${product.title}</div>
+          <div class="product-price">${formatPrice(price)}</div>
+          <div class="product-actions">
+            <button class="btn-buy ${available ? '' : 'soldout'}" onclick="event.stopPropagation();${available ? `addToCart(${product.id})` : ''}">
+              ${available ? 'Add to Cart' : 'Sold Out'}
+            </button>
+            <button class="btn-wa" onclick="event.stopPropagation();orderWhatsApp('${product.title.replace(/'/g,"\\'")}', ${price})">💬</button>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  function getFilteredProducts() {
+    let filtered = [...allProducts];
+    if (currentCategory !== 'all' && currentCategory !== 'deals') {
+      filtered = filtered.filter(p => getProductCategory(p) === currentCategory);
+    }
+    if (currentSearch) {
+      const q = currentSearch.toLowerCase();
+      filtered = filtered.filter(p => p.title.toLowerCase().includes(q) || (p.vendor||'').toLowerCase().includes(q));
+    }
+    if (currentSort === 'price-low') filtered.sort((a,b) => getProductPrice(a) - getProductPrice(b));
+    else if (currentSort === 'price-high') filtered.sort((a,b) => getProductPrice(b) - getProductPrice(a));
+    else if (currentSort === 'name') filtered.sort((a,b) => a.title.localeCompare(b.title));
+    return filtered;
+  }
+
+  function renderProductsPage() {
+    const filtered = getFilteredProducts();
+    const total = filtered.length;
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    const paginated = filtered.slice(start, start + ITEMS_PER_PAGE);
+
+    const grid = document.getElementById('productsGrid');
+    if (paginated.length === 0) {
+      grid.innerHTML = '<div class="no-products">😕 No products found. Try a different search or category.</div>';
+    } else {
+      grid.innerHTML = `<div class="products-grid">${paginated.map(renderProductCard).join('')}</div>`;
+    }
+
+    // Pagination
+    const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
+    const pag = document.getElementById('pagination');
+    if (totalPages <= 1) { pag.innerHTML = ''; return; }
+    let pagHTML = '';
+    for (let i = 1; i <= totalPages; i++) {
+      pagHTML += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+    }
+    pag.innerHTML = pagHTML;
+  }
+
+  function goToPage(n) {
+    currentPage = n;
+    renderProductsPage();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  // ============ FEATURED PRODUCTS ============
+  function renderFeatured() {
+    const featured = allProducts.slice(0, 8);
+    const el = document.getElementById('featuredProducts');
+    if (featured.length === 0) {
+      el.innerHTML = '<div class="no-products">No products available yet.</div>';
+      return;
+    }
+    el.innerHTML = `<div class="products-grid">${featured.map(renderProductCard).join('')}</div>`;
+
+    // Update hero card with first laptop
+    const laptop = allProducts.find(p => getProductCategory(p) === 'laptops');
+    if (laptop) {
+      const img = getProductImage(laptop);
+      const card = document.getElementById('heroCard');
+      card.innerHTML = `
+        ${img ? `<img src="${img}" alt="${laptop.title}" style="width:160px;height:120px;object-fit:contain;margin-bottom:12px;" onerror="this.style.display='none'"/>` : '<div class="hero-card-placeholder">💻</div>'}
+        <h3>${laptop.title.substring(0,30)}${laptop.title.length>30?'...':''}</h3>
+        <div class="price">${formatPrice(getProductPrice(laptop))}</div>
+        <div class="specs">${laptop.variants?.[0]?.title !== 'Default Title' ? laptop.variants?.[0]?.title || '' : ''}</div>`;
+    }
+  }
+
+  // ============ NAVIGATION ============
+  function showPage(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + name).classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  function showCategory(cat) {
+    currentCategory = cat;
+    currentPage = 1;
+    currentSearch = '';
+    document.getElementById('searchInput').value = '';
+
+    const titles = {
+      all: ['All Products', 'Browse our full catalogue'],
+      laptops: ['Laptops', 'Genuine laptops at Kenyan prices'],
+      accessories: ['Accessories', 'Mice, keyboards, headsets & more'],
+      cables: ['Cables & Adapters', 'HDMI, USB, DisplayPort & more'],
+      solar: ['Solar & Lighting', 'Solar panels, lights & more'],
+      chargers: ['Chargers', 'Laptop & device chargers'],
+      deals: ['🔥 Hot Deals', 'Limited time offers'],
+    };
+    const [title, sub] = titles[cat] || ['Products', ''];
+    document.getElementById('productsPageTitle').textContent = title;
+    document.getElementById('productsPageSub').textContent = sub;
+
+    showPage('products');
+    renderProductsPage();
+  }
+
+  function setActiveNav(el) {
+    document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  function doSearch() {
+    const q = document.getElementById('searchInput').value.trim();
+    if (!q) return;
+    currentSearch = q;
+    currentCategory = 'all';
+    currentPage = 1;
+    document.getElementById('productsPageTitle').textContent = `Search: "${q}"`;
+    document.getElementById('productsPageSub').textContent = `Results for "${q}"`;
+    showPage('products');
+    renderProductsPage();
+  }
+
+  document.getElementById('searchInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') doSearch();
+  });
+
+  function sortProducts() {
+    currentSort = document.getElementById('sortSelect').value;
+    currentPage = 1;
+    renderProductsPage();
+  }
+
+  // ============ CART ============
+  function saveCart() {
+    localStorage.setItem('wealhub_cart', JSON.stringify(cart));
+    updateCartCount();
+  }
+
+  function updateCartCount() {
+    const total = cart.reduce((s, i) => s + i.qty, 0);
+    document.getElementById('cartCount').textContent = total;
+  }
+
+  function addToCart(productId) {
+    const product = allProducts.find(p => p.id === productId);
+    if (!product) return;
+    const existing = cart.find(i => i.id === productId);
+    if (existing) {
+      existing.qty++;
+    } else {
+      cart.push({
+        id: productId,
+        title: product.title,
+        price: getProductPrice(product),
+        image: getProductImage(product),
+        qty: 1
+      });
+    }
+    saveCart();
+    showToast('✅ Added to cart!');
+  }
+
+  function openCart() {
+    renderCart();
+    document.getElementById('cartModal').classList.add('open');
+  }
+
+  function closeCart() {
+    document.getElementById('cartModal').classList.remove('open');
+  }
+
+  function closeCartOutside(e) {
+    if (e.target === document.getElementById('cartModal')) closeCart();
+  }
+
+  function renderCart() {
+    const el = document.getElementById('cartItems');
+    const footer = document.getElementById('cartFooter');
+    if (cart.length === 0) {
+      el.innerHTML = '<div class="cart-empty">🛒<br><br>Your cart is empty.<br>Add some products to get started!</div>';
+      footer.style.display = 'none';
+      return;
+    }
+    footer.style.display = 'block';
+    el.innerHTML = cart.map(item => `
+      <div class="cart-item">
+        <div class="cart-item-img">
+          ${item.image ? `<img src="${item.image}" alt="${item.title}" />` : '📦'}
+        </div>
+        <div class="cart-item-info">
+          <div class="cart-item-name">${item.title}</div>
+          <div class="cart-item-price">${formatPrice(item.price)}</div>
+          <div class="cart-item-qty">
+            <button class="qty-btn" onclick="changeQty(${item.id}, -1)">−</button>
+            <span>${item.qty}</span>
+            <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+          </div>
+          <button class="cart-item-remove" onclick="removeFromCart(${item.id})">✕ Remove</button>
+        </div>
+      </div>`).join('');
+
+    const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+    document.getElementById('cartTotal').textContent = formatPrice(total);
+  }
+
+  function changeQty(id, delta) {
+    const item = cart.find(i => i.id === id);
+    if (!item) return;
+    item.qty += delta;
+    if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
+    saveCart();
+    renderCart();
+  }
+
+  function removeFromCart(id) {
+    cart = cart.filter(i => i.id !== id);
+    saveCart();
+    renderCart();
+  }
+
+  function checkoutWhatsApp() {
+    if (cart.length === 0) return;
+    const items = cart.map(i => `• ${i.title} x${i.qty} = ${formatPrice(i.price * i.qty)}`).join('\n');
+    const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+    const msg = `Hi WealHub! I'd like to order:\n\n${items}\n\nTotal: ${formatPrice(total)}\n\nPlease confirm and advise on M-Pesa payment. Thank you!`;
+    window.open(`https://wa.me/254708398311?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+
+  function orderWhatsApp(title, price) {
+    const msg = `Hi WealHub! I'm interested in:\n\n• ${title} - ${formatPrice(price)}\n\nIs it available? Please advise on delivery and M-Pesa payment. Thank you!`;
+    window.open(`https://wa.me/254708398311?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+
+  // ============ PRODUCT MODAL ============
+  function openProductModal(productId) {
+    const product = allProducts.find(p => p.id === productId);
+    if (!product) return;
+    const img = getProductImage(product);
+    const price = getProductPrice(product);
+    const available = isAvailable(product);
+
+    const imgEl = document.getElementById('productModalImg');
+    imgEl.innerHTML = img
+      ? `<img src="${img}" alt="${product.title}" style="width:100%;height:100%;object-fit:cover;" />`
+      : `<div style="font-size:80px;">${getCategoryEmoji(getProductCategory(product))}</div>`;
+
+    document.getElementById('productModalBrand').textContent = product.vendor || '';
+    document.getElementById('productModalName').textContent = product.title;
+    document.getElementById('productModalPrice').textContent = formatPrice(price);
+    document.getElementById('productModalDesc').textContent = product.body_html
+      ? product.body_html.replace(/<[^>]*>/g, '').substring(0, 300) + '...'
+      : 'Genuine product. Fast delivery across Nairobi. M-Pesa accepted.';
+
+    const buyBtn = document.getElementById('productModalBuy');
+    buyBtn.textContent = available ? 'Add to Cart' : 'Sold Out';
+    buyBtn.className = `btn-buy ${available ? '' : 'soldout'}`;
+    buyBtn.onclick = available ? () => { addToCart(productId); closeProductModal(); } : null;
+
+    document.getElementById('productModalWA').onclick = () => orderWhatsApp(product.title, price);
+    document.getElementById('productModal').classList.add('open');
+  }
+
+  function closeProductModal() {
+    document.getElementById('productModal').classList.remove('open');
+  }
+
+  function closeProductModalOutside(e) {
+    if (e.target === document.getElementById('productModal')) closeProductModal();
+  }
+
+  // ============ CONTACT FORM ============
+  function sendWhatsAppMessage() {
+    const name = document.querySelector('.contact-form input[type=text]').value || 'Customer';
+    const phone = document.querySelector('.contact-form input[type=tel]').value || '';
+    const category = document.querySelector('.contact-form select').value || '';
+    const message = document.querySelector('.contact-form textarea').value || '';
+    const msg = `Hi WealHub!\n\nName: ${name}\nPhone: ${phone}\nLooking for: ${category}\n\n${message}`;
+    window.open(`https://wa.me/254708398311?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+
+  // ============ TOAST ============
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2500);
+  }
+
+  // ============ INIT ============
+  updateCartCount();
+
+  (async () => {
+    allProducts = await fetchAllProducts();
+    if (allProducts.length > 0) {
+      renderFeatured();
+    } else {
+      document.getElementById('featuredProducts').innerHTML =
+        '<div class="no-products">Unable to load products. <a href="https://wealhub.co.ke" style="color:var(--green)">Visit our Shopify store →</a></div>';
+    }
+  })();
+</script>
 </body>
 </html>
